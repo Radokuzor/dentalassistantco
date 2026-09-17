@@ -15,7 +15,8 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 3. **Secrets stay server-side.** `.env` and the `*firebase-adminsdk*.json` service key are gitignored. The Telegram token
    and Pexels key must never be sent to the browser (no `NEXT_PUBLIC_` prefix). Firebase *web* config is public by design.
 4. **Contact phone:** (512) 766-6445.
-5. **Compliance:** TCPA consent on lead forms, an FTC affiliate disclosure, and a privacy policy (Colorado Privacy Act).
+5. **Shared Firebase project.** `take-shots-f1a99` also runs another app (Firestore `games`, `shot_content`, with its own rules). Only deploy `--only hosting,functions`, prefix our collections with `dac_`, and never add a `firestore` key to firebase.json.
+6. **Compliance:** TCPA consent on lead forms, an FTC affiliate disclosure, and a privacy policy (Colorado Privacy Act).
    Cite primary sources for any regulatory claim.
 
 ## Map of the repo
@@ -41,6 +42,7 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 - Firebase project: `take-shots-f1a99` (web config in `web/src/lib/firebase.ts`; GA4 measurement ID `G-KW4Q59VD58`)
 - Hosting: Firebase Hosting serving the static export in `web/out`; `/api/collect` and `/api/lead` rewrite to Functions. Functions need the **Blaze** plan.
 - Images: Pexels API (`PEXELS_API_KEY` in `.env`), fetched at build/authoring time and credited.
+- Live: https://take-shots-f1a99.web.app (custom domain pending DNS at Cloudflare). Functions: Node 22 runtime, firebase-admin 13 (v14 needs local Node 22).
 - Alerts: Telegram bot (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` as Functions secrets)
 
 ## Sources of truth for Colorado facts
@@ -61,3 +63,5 @@ Facts gathered 2026-09-17 (re-verify before publishing):
 - 2026-09-17: Built pages: home, find-a-program (quiz), programs, EDDA, demand, Colorado Springs, jobs (empty), hire,
   resources, partners (empty, so no lead sharing yet), about, contact, privacy, terms, site-map, blog (3 rewritten posts).
   Not deployed yet; see the README deploy checklist.
+- 2026-09-17: **Deployed.** Hosting and all 5 functions are live; an end-to-end test lead passed and was deleted. Custom domains were added in Firebase
+  but are waiting on Cloudflare DNS changes (www currently CNAMEs to Vercel).

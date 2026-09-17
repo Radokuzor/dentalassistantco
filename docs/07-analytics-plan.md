@@ -60,13 +60,13 @@ The token and chat ID live **only** in Cloud Functions secrets (`TELEGRAM_BOT_TO
 
 ## Firestore collections
 ```
-events/{autoId}     { name, params, vid, sid, path, ts, ua_device, country?, ipHash }
-sessions/{sid}      { vid, start, last, pages, landing, referrer, utm, device, events }
-leads/{autoId}      { type, fields, quiz, consent:{text, ts, ip, ua, url}, attribution, status }
-jobs/{autoId}       { employer, title, city, pay, status, createdAt }
-dailyStats/{yyyy-mm-dd}  aggregated by the scheduled function
+dac_events/{autoId}     { name, params, vid, sid, path, ts, ua_device, country?, ipHash }
+dac_sessions/{sid}      { vid, start, last, pages, landing, referrer, utm, device, events }
+dac_leads/{autoId}      { type, fields, quiz, consent:{text, ts, ip, ua, url}, attribution, status }
+dac_jobs/{autoId}       { employer, title, city, pay, status, createdAt }
+dac_dailyStats/{yyyy-mm-dd}  aggregated by the scheduled function
 ```
-Security rules: clients cannot read or write these collections directly. Only Cloud Functions (Admin SDK) can.
+The (default) Firestore database is **shared with another app** (`games`, `shot_content`), so every collection here has a `dac_` prefix. Only Cloud Functions (Admin SDK) touch these collections. **Never deploy Firestore rules from this repo**; the rules belong to the other app.
 
 ## How to use the data (monthly review loop)
 1. **Search Console:** find queries at positions 5–20, then improve those posts (titles, FAQs, internal links).
@@ -78,8 +78,8 @@ Security rules: clients cannot read or write these collections directly. Only Cl
    logged as `experiment_id` on events.
 
 ## Owner setup checklist
-- [ ] Upgrade the Firebase project to **Blaze** (required for Functions and Next.js SSR hosting)
-- [ ] `firebase functions:secrets:set TELEGRAM_BOT_TOKEN` and `TELEGRAM_CHAT_ID`
+- [x] Blaze plan active; all 5 functions deployed 2026-09-17
+- [x] Telegram secrets set (version 1)
 - [ ] Rotate the Telegram bot token (it was shared in chat)
 - [ ] In GA4, mark the key events above as conversions; link GA4 to Search Console
 - [ ] Create a Microsoft Clarity project and set `NEXT_PUBLIC_CLARITY_ID`
