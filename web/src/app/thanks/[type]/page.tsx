@@ -11,6 +11,10 @@ const copy: Record<string, { title: string; body: string }> = {
     body: "We received your answers. Expect a call or text shortly with programs that match your schedule and budget. While you wait, read up on Colorado's x-ray requirement so you know what to ask.",
   },
   contact: { title: "Message received", body: "Thanks for reaching out. We usually reply within one business day." },
+  story: {
+    title: "Thank you for sharing",
+    body: "We read every story. If we'd like to feature yours, we'll email you to confirm the wording before anything goes live.",
+  },
   employer: {
     title: "Your opening is in",
     body: "We'll review it and reach out to confirm the details before it goes live on the job board.",

@@ -70,3 +70,7 @@ Facts gathered 2026-09-17 (re-verify before publishing):
   `/editorial-policy/`, `/advertising-disclosure/`, `/accessibility/`; added Pima, Concorde and Academy for Dental Assisting Careers
   to `programs.ts` (field `weeks` → `length` + `kind`); rewrote 10 legacy posts (13 total) and 301-consolidated 3 duplicates.
   18 legacy posts still 302 to `/blog/` (Tier 2 in `docs/06-content-plan.md`).
+- 2026-09-17: Rewrote all 13 posts in a plainer editorial voice. Added the testimonials system: `web/src/data/stories.json`
+  (currently empty), `<Stories>` on the homepage, `/stories/` (noindex while empty) with a "story" submission form that stores
+  publish consent, and a `story` lead type in Functions. **Only add real, permissioned stories. Never write testimonials**
+  (FTC 16 CFR 465). Once `stories.json` has entries, the old testimonial URLs 301 to `/stories/` automatically.

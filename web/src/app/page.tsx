@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowUpRight, Briefcase, GraduationCap, Radiation, Stethoscope } from "lucide-react";
 import { JsonLd } from "@/components/JsonLd";
 import { LeadQuiz } from "@/components/LeadQuiz";
+import { allStories, Stories } from "@/components/Stories";
 import { programs } from "@/data/programs";
 import { getPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
@@ -192,7 +193,7 @@ export default function Home() {
                 <tr key={p.school} className="border-t border-line">
                   <td className="px-5 py-4 font-semibold">{p.school}</td>
                   <td className="px-5 py-4">{p.cities.join(", ")}</td>
-                  <td className="px-5 py-4">{p.weeks ? `${p.weeks} weeks` : "See school"}</td>
+                  <td className="px-5 py-4">{p.length}</td>
                   <td className="px-5 py-4">{p.schedule}</td>
                   <td className="px-5 py-4 font-display text-lg text-teal-deep">{p.tuition}</td>
                 </tr>
@@ -225,6 +226,13 @@ export default function Home() {
           </span>
         </Link>
       </section>
+
+      {/* STORIES (hidden until src/data/stories.json has entries) */}
+      {allStories.length > 0 && (
+        <div className="pt-20">
+          <Stories limit={3} heading="From Colorado assistants and offices" />
+        </div>
+      )}
 
       {/* GUIDES */}
       {posts.length > 0 && (

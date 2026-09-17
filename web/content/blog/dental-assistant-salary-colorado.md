@@ -15,52 +15,38 @@ faq:
     a: "Denver-area pay is generally higher, but so is the cost of living. Compare offers on take-home pay after rent and commuting."
 ---
 
-Dental assisting won't make you rich overnight, but it's one of the fastest routes into a steady healthcare paycheck in Colorado. Here's what the numbers look like in 2026, and how to earn toward the top of the range.
+Most Colorado dental assistants earn somewhere around $21 to $23 an hour, based on what job sites are showing in 2026. Full time, that works out to roughly $44,000 to $48,000 a year before overtime. New assistants usually start below that range. Assistants with a few years behind them, or with a specialty, often earn above it.
 
-## Key takeaways
+For a national benchmark, the Bureau of Labor Statistics puts the median at [$48,070 a year](https://www.bls.gov/ooh/healthcare/dental-assistants.htm) ($23.11 an hour) as of May 2025. Half of dental assistants in the U.S. earn more than that and half earn less.
 
-- **National median:** $48,070 per year (U.S. Bureau of Labor Statistics, May 2025).
-- **Colorado average:** about **$21–$23 per hour** according to job-market sites in 2026, or roughly $44,000–$48,000 a year full time.
-- **Biggest pay levers:** x-ray qualification, experience, specialty (ortho, oral surgery), and national credentials.
+## Where these numbers come from
 
-## What the data says
-
-| Source | Figure | Notes |
+| Source | Figure | What it's based on |
 |---|---|---|
-| [BLS Occupational Outlook](https://www.bls.gov/ooh/healthcare/dental-assistants.htm) | $48,070/yr national median | May 2025; the most reliable baseline |
-| [ZipRecruiter, Colorado](https://www.ziprecruiter.com/Salaries/Dental-Assistant-Salary--in-Colorado) | ~$21.30/hr average | Based on job postings, Sept 2026 |
-| Indeed, Colorado | ~$23/hr average | Based on job postings and reports |
+| [BLS Occupational Outlook](https://www.bls.gov/ooh/healthcare/dental-assistants.htm) | $48,070/yr national median | Employer surveys, May 2025 |
+| [ZipRecruiter, Colorado](https://www.ziprecruiter.com/Salaries/Dental-Assistant-Salary--in-Colorado) | about $21.30/hr | Job postings, September 2026 |
+| Indeed, Colorado | about $23/hr | Postings and user reports |
 
-Job-site averages move month to month and depend on which postings are live, so treat them as ranges, not promises. Check the latest [BLS state and metro data](https://www.bls.gov/oes/) for official Colorado figures.
+The job-site averages change month to month depending on which postings happen to be live, so read them as a range. For official state and metro figures, BLS publishes [occupational wage estimates](https://www.bls.gov/oes/) for Colorado, Denver and Colorado Springs.
 
-## What changes your pay
+## What gets you paid more
 
-### 1. Being x-ray qualified
-Colorado requires approved radiography training before you take x-rays ([here's how that works](/blog/dental-assistant-colorado-licensed/)). Offices will pay more for someone who can take x-rays on day one.
+**X-ray qualification.** This one matters most for new assistants. Colorado requires approved radiography training before you take x-rays ([details here](/blog/dental-assistant-colorado-licensed/)). An assistant who can shoot a full-mouth series on day one saves the office weeks of training, and offices tend to pay for that.
 
-### 2. Experience
-The first raise usually comes after you've proved you can run a room on your own, often within your first 6–12 months.
+**Time in the chair.** The first real raise usually comes once the dentist trusts you to run a room without supervision, often somewhere between six months and a year in.
 
-### 3. Specialty
-Orthodontic, oral-surgery and pediatric offices often pay a premium. So do offices with long hours or multiple locations. See [the highest-paying dental assistant jobs](/blog/highest-paying-dental-assistant-job/).
+**Specialty.** Oral surgery and orthodontic offices generally pay more than general practices, and so do offices with long days or several locations. We cover those roles in [the highest-paying dental assistant jobs](/blog/highest-paying-dental-assistant-job/).
 
-### 4. Credentials
-DANB certifications (RHS, ICE, CDA) show commitment, and some employers pay more for them.
+**Credentials.** DANB's RHS, ICE or full CDA won't automatically bump your rate. They do give you something concrete to point to when you ask for one.
 
-### 5. Location
-Denver–Boulder pay tends to run higher than in smaller markets. Always weigh an offer against rent and commute costs.
+**Location.** Denver and Boulder offices tend to pay more than those in Pueblo or Grand Junction. Rent in those cities also eats a bigger share of your paycheck, so compare offers on what you actually keep.
 
-## How to negotiate your first offer
+## Negotiating your first offer
 
-1. Look up current postings in your city for the same role, and bring numbers.
-2. Lead with skills they'd otherwise have to teach: x-rays, digital scanning, sterilization protocols.
-3. Ask about the whole package: health insurance, paid time off, CE allowance, uniforms, and a 90-day review.
-4. Get the offer in writing.
+Before an interview, pull up five or six current postings for your area and write down the hourly ranges. If you can take x-rays, scan digitally or run an autoclave cycle without help, say so. Those are the things they'd otherwise have to teach you.
 
-## Next steps
+Also ask about everything beyond the hourly rate: health insurance, paid time off, whether they pay for continuing education, and uniform allowances. A 90-day review with a set raise is worth asking for too, and a written offer protects both sides.
 
-- [Compare Colorado training programs](/programs/dental-assistant/) (cost vs. earning potential)
-- [Browse dental assistant jobs](/jobs/)
-- [Find a program in 60 seconds](/find-a-program/)
+If you're still deciding whether the training is worth it, look at [what programs cost in Colorado](/blog/much-dental-assistant-training-programs-cost/) next to these numbers. For most full-time assistants, tuition gets paid back within the first year.
 
-*Figures checked September 17, 2026. We update this page when new BLS data is released.*
+*Figures checked September 17, 2026. We update this page when BLS releases new data.*

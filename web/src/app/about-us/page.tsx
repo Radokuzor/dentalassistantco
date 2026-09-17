@@ -30,8 +30,13 @@ export default function About() {
         <p>
           From about 2016 to 2026, dentalassistantco.com was the website of the American Institute of Dental Assisting, a
           Colorado Springs school. The domain has since changed hands. <strong>We are not affiliated with that school</strong>{" "}
-          and can&apos;t answer questions about its programs, records or transcripts. Former students who need records should
-          contact the Colorado Department of Higher Education, Private Occupational School Board.
+          and can&apos;t answer questions about its programs, records or transcripts. Former students who need records can
+          find out how to request them on our <Link href="/former-aida-students/">help page for former students</Link>.
+        </p>
+        <h2>How we work</h2>
+        <p>
+          Read our <Link href="/editorial-policy/">editorial policy</Link> to learn how we research and update our guides,
+          and our <Link href="/advertising-disclosure/">advertising disclosure</Link> to see how we make money.
         </p>
         <h2>Contact</h2>
         <p>

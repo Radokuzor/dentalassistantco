@@ -33,6 +33,24 @@ export default function Resources() {
             ))}
           </ul>
         </section>
+        <section>
+          <h2 className="font-display text-2xl">Start here</h2>
+          <ul className="mt-4 grid gap-3 sm:grid-cols-2">
+            {[
+              ["/requirements/", "Colorado requirements", "License, x-ray rule, DANB and CPR in one place"],
+              ["/programs/dental-assistant/", "Programs compared", "Cost, length and schedule for Colorado schools"],
+              ["/blog/how-long-does-it-take-to-become-a-dental-assistant/", "How long it takes", "Timelines from 8 weeks to 2 years"],
+              ["/blog/choose-dental-assisting-school-thats-right/", "School checklist", "12 questions to ask before you enroll"],
+            ].map(([href, name, note]) => (
+              <li key={href}>
+                <Link href={href} className="block h-full rounded-2xl border border-line bg-white p-5 hover:border-teal">
+                  <span className="font-semibold text-teal">{name}</span>
+                  <span className="mt-1 block text-sm text-ink-soft">{note}</span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
         <section className="rounded-3xl border border-dashed border-line bg-white p-8">
           <h2 className="font-display text-2xl">Coming soon: study packs</h2>
           <p className="mt-2 text-ink-soft">

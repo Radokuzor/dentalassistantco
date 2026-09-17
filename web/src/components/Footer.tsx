@@ -8,7 +8,7 @@ const cols: { title: string; links: [string, string][] }[] = [
       ["/find-a-program/", "Find a program"],
       ["/programs/dental-assistant/", "Colorado programs compared"],
       ["/programs/expanded-duties-dental-assistant/", "Expanded duties (EDDA)"],
-      ["/blog/dental-assistant-colorado-licensed/", "Colorado requirements"],
+      ["/requirements/", "Colorado requirements"],
       ["/blog/dental-assistant-salary-colorado/", "Salary in Colorado"],
     ],
   },
@@ -17,6 +17,7 @@ const cols: { title: string; links: [string, string][] }[] = [
     links: [
       ["/jobs/", "Dental assistant jobs"],
       ["/hire/", "Hire an assistant"],
+      ["/locations/denver/", "Denver schools"],
       ["/locations/colorado-springs/", "Colorado Springs"],
       ["/colorado-needs-dental-assistants/", "Colorado demand"],
     ],
@@ -27,7 +28,12 @@ const cols: { title: string; links: [string, string][] }[] = [
       ["/blog/", "Guides"],
       ["/about-us/", "About"],
       ["/contact-us/", "Contact"],
+      ["/stories/", "Share your story"],
+      ["/editorial-policy/", "Editorial policy"],
+      ["/advertising-disclosure/", "Advertising disclosure"],
       ["/privacy-policy/", "Privacy"],
+      ["/terms/", "Terms"],
+      ["/accessibility/", "Accessibility"],
       ["/site-map/", "Site map"],
     ],
   },
@@ -62,7 +68,15 @@ export function Footer() {
       </div>
       <div className="relative border-t border-white/10">
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs leading-relaxed text-paper/60 sm:px-6">
-          {site.disclosure} Some links may be affiliate links; we may earn a commission at no cost to you. ©{" "}
+          {site.disclosure}{" "}
+          <Link href="/former-aida-students/" className="underline hover:text-white">
+            Looking for that school?
+          </Link>{" "}
+          Some links may be affiliate links; we may earn a commission at no cost to you (
+          <Link href="/advertising-disclosure/" className="underline hover:text-white">
+            disclosure
+          </Link>
+          ). ©{" "}
           {new Date().getFullYear()} DentalAssistantCO.
         </p>
       </div>

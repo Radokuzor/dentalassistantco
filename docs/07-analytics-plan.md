@@ -36,6 +36,7 @@ for the cookieless first-party page-view ping, which stores no personal data.
 | `file_download` | file | PDF/asset links |
 | `quiz_start` / `quiz_step` / `quiz_abandon` | step, answer | Find-a-Program quiz |
 | `form_start` / `form_error` / `generate_lead` | form_id, field, error | Lead, contact, and employer forms |
+| `story_submit` | form_id | Graduate/employer story form on `/stories/` |
 | `job_view` / `job_apply_click` / `job_post_submit` | job_id, employer | Job board |
 | `newsletter_signup` | location | Email capture |
 | `purchase_click` | product | Stripe checkout button |

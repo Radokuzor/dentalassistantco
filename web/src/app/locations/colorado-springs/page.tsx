@@ -25,7 +25,7 @@ export default function ColoradoSprings() {
         <ul>
           {local.map((p) => (
             <li key={p.school}>
-              <strong>{p.school}</strong>: {p.weeks ? `${p.weeks} weeks, ` : ""}
+              <strong>{p.school}</strong>: {p.length !== "See school" ? `${p.length}, ` : ""}
               {p.schedule}, {p.tuition}
             </li>
           ))}

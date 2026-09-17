@@ -12,6 +12,7 @@ export const site = {
 export const nav = [
   { href: "/find-a-program/", label: "Find a Program" },
   { href: "/programs/dental-assistant/", label: "Schools" },
+  { href: "/requirements/", label: "Requirements" },
   { href: "/blog/dental-assistant-salary-colorado/", label: "Salary" },
   { href: "/jobs/", label: "Jobs" },
   { href: "/blog/", label: "Guides" },

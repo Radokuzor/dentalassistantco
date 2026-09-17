@@ -1,6 +1,6 @@
 ---
 title: "Do Dental Assistants Need a License in Colorado?"
-description: "No. Colorado doesn't license dental assistants, but the Dental Board controls which tasks you can do, and x-rays require approved training. Here's what that means for you."
+description: "Colorado doesn't license dental assistants, but the Dental Board still controls what you can do, and x-rays need approved training. What that means if you're starting out."
 date: "2026-09-17"
 updated: "2026-09-17"
 cluster: "Requirements"
@@ -15,58 +15,36 @@ faq:
     a: "Colorado doesn't issue a separate license for dental assistants. Which advanced tasks a dentist may delegate, and any training required, is set by the Colorado Dental Board's rules, so check the current rules before paying for an expanded-duties course."
 ---
 
-**Short answer: no.** Colorado doesn't license, register or certify dental assistants at the state level. That's one reason dental assisting is one of the fastest ways into healthcare here.
+No. Colorado doesn't license, register or certify dental assistants. There's no state exam to pass and no card to renew, and nobody at the state checks your name before an office hires you.
 
-Colorado does still regulate the work, though. The rules just focus on *tasks*, not the person.
+That surprises a lot of people, especially anyone who has worked in California or Texas, where assistants carry a state registration. Colorado still regulates dental assisting. It just regulates the work instead of the worker.
 
-## Key takeaways
+## How it actually works
 
-- There's no state license, registration or exam to become a dental assistant in Colorado.
-- The **Colorado Dental Board** decides which tasks a dentist may delegate to an assistant, and under what supervision.
-- **X-rays are the big exception.** You need qualifying radiography training (or a qualifying DANB exam) before you take them.
-- Employers still care about training, CPR/BLS, and national credentials like DANB's.
+The Colorado Dental Practice Act and the Dental Board's rules list what a dentist is allowed to hand off to an assistant, and how closely the dentist has to supervise. The dentist carries the responsibility. If they delegate something they shouldn't, or delegate it to someone who hasn't been trained, the problem lands on their license.
 
-## How Colorado regulates dental assistants
+So on a normal day, a Colorado assistant is seating patients, turning over rooms, running the sterilization area, passing instruments and keeping the field clear with suction. They also take impressions or digital scans when the dentist asks, go over post-op instructions, and handle a fair amount of charting. None of that needs a state credential.
 
-Many states issue a "Registered Dental Assistant" (RDA) license. Colorado doesn't. Instead, the dentist you work for is responsible for delegating only the tasks the Colorado Dental Practice Act and Dental Board rules allow, and for making sure you're competent to do them.
+## The exception: x-rays
 
-In practice, a Colorado dental assistant typically:
+Radiography is the one area where Colorado draws a hard line. Before you expose a patient, you have to qualify through one of the routes the state accepts. [DANB's summary of the Colorado rule](https://www.danb.org/state-requirements/colorado-radiography) lists them:
 
-- Prepares and breaks down treatment rooms
-- Sterilizes instruments and follows infection-control protocols
-- Passes instruments and keeps the working area clear during procedures
-- Takes impressions or digital scans when delegated
-- Educates patients on post-op care and home hygiene
-- Updates charts and helps with scheduling
+- passing DANB's Radiation Health and Safety (RHS) exam, or the full Certified Dental Assistant (CDA) exam, which includes RHS
+- finishing a radiography module approved by the Colorado Dental Board and taught by a licensed dentist or hygienist
+- finishing the radiography course in an accredited dental assisting program that meets Colorado's content and clinical-hour requirements
 
-## The x-ray (radiography) requirement
+This is the question to ask every school you're considering: is x-ray training included, and does it satisfy Colorado's rule? Some programs build it into tuition and some charge for it separately. An assistant who can't take x-rays is a lot less useful to a busy office. The rules do get revised, so check the [Colorado Dental Board](https://dpo.colorado.gov/Dental) before you pay anyone.
 
-This is the one rule every future assistant should know. Before exposing patients to x-rays in Colorado, you need to meet one of the radiography routes the state accepts. According to [DANB's Colorado page](https://www.danb.org/state-requirements/colorado-radiography), those routes include:
+## If there's no license, why bother with training?
 
-1. **Passing a national DANB exam.** That means the Radiation Health and Safety (RHS) exam, or the full Certified Dental Assistant (CDA) exam, which includes RHS.
-2. **Completing Board-approved training.** This includes a Colorado Dental Board–approved radiography module delivered by a licensed dentist or hygienist, or a radiography course in an accredited program that meets Colorado's content and clinical-hour requirements.
+Because the office manager is the real gatekeeper. When they're choosing between someone who already knows sterilization, four-handed dentistry and x-ray positioning and someone who has to learn all of it on the clock, the trained candidate usually wins. The trained candidate often starts at a higher rate too.
 
-Rules change, so confirm the current details with the [Colorado Dental Board](https://dpo.colorado.gov/Dental) before you enroll anywhere.
+Training also gives you externship hours and a couple of references. It gets you ready for DANB exams if you ever move to a state that requires them, and it makes the jump to ortho, surgery or expanded duties easier later on.
 
-> **Tip:** When comparing programs, ask whether radiography training is *included in tuition* and whether it meets Colorado's requirement. It's the single most important thing to verify.
+## Moving in or out of Colorado
 
-## If there's no license, why get trained?
+Rules vary a lot from state to state. If you trained here and move somewhere with a registered dental assistant (RDA) requirement, expect to take an exam or add coursework. DANB credentials travel best, which is why military families around Colorado Springs often get them even though Colorado doesn't ask. There's more on that in [Is DANB certification required in Colorado?](/blog/danb-certification-required-colorado/), and the full list of state rules is on our [requirements page](/requirements/).
 
-Because employers are the gatekeepers. A candidate who already knows infection control, four-handed dentistry, and x-rays needs less training time. That usually means a faster hire and often better starting pay. Formal training also helps you:
+If you're ready to look at schools, our [Colorado program comparison](/programs/dental-assistant/) shows what each one charges and whether radiography is part of the deal.
 
-- Qualify for x-rays on day one
-- Prepare for DANB exams if you move to a state that requires them
-- Build externship hours and references
-- Move into orthodontic, surgical or expanded-duty roles later
-
-## Moving to or from Colorado
-
-Dental assisting rules vary a lot by state. If you trained in Colorado and move somewhere with an RDA license, you may need to take exams or add training. DANB certification is the most portable credential. See [Is DANB certification required in Colorado?](/blog/danb-certification-required-colorado/)
-
-## Next steps
-
-- Compare [Colorado dental assistant programs](/programs/dental-assistant/)
-- See [what dental assistants earn in Colorado](/blog/dental-assistant-salary-colorado/)
-- [Get matched with a program](/find-a-program/) in 60 seconds
-
-*This guide is general information, not legal advice. Last checked against DANB's Colorado requirements on September 17, 2026.*
+*General information, not legal advice. Checked against DANB's Colorado page on September 17, 2026.*

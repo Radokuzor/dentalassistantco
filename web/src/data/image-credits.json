@@ -61,5 +61,59 @@
     "url": "https://www.pexels.com/photo/man-in-black-shirt-sitting-and-writing-771317/",
     "width": 4256,
     "height": 2514
+  },
+  "blog-chairside": {
+    "pexelsId": 3881292,
+    "alt": "Young female dentist in medical mask and latex gloves curing teeth of patient with assistant using medical instruments in modern dental clinic",
+    "photographer": "Andrea Piacquadio",
+    "photographerUrl": "https://www.pexels.com/@olly",
+    "url": "https://www.pexels.com/photo/female-dentists-treating-teeth-of-patient-in-modern-clinic-3881292/",
+    "width": 7680,
+    "height": 5120
+  },
+  "blog-online-study": {
+    "pexelsId": 5538622,
+    "alt": "Crop anonymous young female freelancer with earbuds writing notes with pencil in notebook while sitting at table with laptop in contemporary cafe",
+    "photographer": "Zen Chung",
+    "photographerUrl": "https://www.pexels.com/@zen-chung",
+    "url": "https://www.pexels.com/photo/crop-female-student-writing-notes-in-copybook-while-sitting-at-table-5538622/",
+    "width": 3874,
+    "height": 2235
+  },
+  "blog-instruments": {
+    "pexelsId": 6812522,
+    "alt": "Close-up of dental tools wrapped in brown paper on a metal tray, highlighting dental care readiness.",
+    "photographer": "Pavel Danilyuk",
+    "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+    "url": "https://www.pexels.com/photo/dental-tools-in-brown-paper-6812522/",
+    "width": 5473,
+    "height": 3654
+  },
+  "blog-ortho": {
+    "pexelsId": 6528907,
+    "alt": "A dentist carefully examines orthodontic braces during a dental procedure.",
+    "photographer": "cottonbro studio",
+    "photographerUrl": "https://www.pexels.com/@cottonbro",
+    "url": "https://www.pexels.com/photo/treating-of-a-teeth-with-braces-6528907/",
+    "width": 3762,
+    "height": 2508
+  },
+  "blog-training": {
+    "pexelsId": 30902113,
+    "alt": "Dental students practicing procedures on training models in a classroom setting.",
+    "photographer": "Duy Tân Đại học",
+    "photographerUrl": "https://www.pexels.com/@duy-tan-d-i-h-c-842966226",
+    "url": "https://www.pexels.com/photo/dental-students-practicing-on-training-models-30902113/",
+    "width": 5184,
+    "height": 3456
+  },
+  "blog-choose-school": {
+    "pexelsId": 6809664,
+    "alt": "Patient discussing dental issues at a modern clinic reception with a receptionist.",
+    "photographer": "Pavel Danilyuk",
+    "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+    "url": "https://www.pexels.com/photo/patient-talking-to-a-receptionist-at-a-dental-clinic-6809664/",
+    "width": 5473,
+    "height": 3654
   }
 }

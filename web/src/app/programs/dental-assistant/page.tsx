@@ -15,7 +15,7 @@ export default function Programs() {
       <PageHero
         eyebrow="Updated September 2026"
         title="Dental assistant programs in Colorado, compared"
-        intro="Private Colorado programs typically take 10–13 weeks and cost a few thousand dollars. Here's how the options stack up, and what to ask before you pay a deposit."
+        intro="Private Colorado programs typically take 8–12 weeks and cost a few thousand dollars; career colleges take about 9 months. Here's how the options stack up, and what to ask before you pay a deposit."
         crumbs={[{ href: "/programs/dental-assistant/", label: "Programs" }]}
       />
       <Prose>
@@ -38,7 +38,7 @@ export default function Programs() {
                   </a>
                 </td>
                 <td>{p.cities.join(", ")}</td>
-                <td>{p.weeks ? `${p.weeks} weeks` : "See school"}</td>
+                <td>{p.length}</td>
                 <td>{p.schedule}</td>
                 <td>{p.tuition}</td>
               </tr>
@@ -47,6 +47,12 @@ export default function Programs() {
         </table>
         <p>
           <small>*As published on each school&apos;s website, checked September 17, 2026. Listing a school doesn&apos;t mean we partner with it.</small>
+        </p>
+
+        <p>
+          By city: <Link href="/locations/denver/">Denver &amp; Front Range</Link> ·{" "}
+          <Link href="/locations/colorado-springs/">Colorado Springs</Link>. New to this? Read{" "}
+          <Link href="/blog/choose-dental-assisting-school-thats-right/">how to choose a school</Link>.
         </p>
 
         <h2>Short programs vs. college certificates</h2>

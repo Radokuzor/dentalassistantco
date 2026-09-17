@@ -6,17 +6,30 @@ import { getAttribution, getIds, track } from "@/lib/analytics";
 
 type Field = { name: string; label: string; type?: string; required?: boolean; textarea?: boolean };
 
-/** Generic lead form used by /contact-us/ (type "contact") and /hire/ (type "employer"). */
-export function ContactForm({ type, fields, cta }: { type: "contact" | "employer"; fields: Field[]; cta: string }) {
+/** Generic lead form used by /contact-us/ ("contact"), /hire/ ("employer") and /stories/ ("story").
+ *  `consent` renders a required checkbox whose exact wording is stored with the submission. */
+export function ContactForm({
+  type,
+  fields,
+  cta,
+  consent,
+}: {
+  type: "contact" | "employer" | "story";
+  fields: Field[];
+  cta: string;
+  consent?: string;
+}) {
   const router = useRouter();
   const [values, setValues] = useState<Record<string, string>>({});
   const [started, setStarted] = useState(false);
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
+  const [agreed, setAgreed] = useState(false);
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
     const missing = fields.filter((f) => f.required && !values[f.name]?.trim()).map((f) => f.label.toLowerCase());
+    if (consent && !agreed) missing.push("the permission checkbox");
     if (missing.length) {
       setError(`Please fill in: ${missing.join(", ")}.`);
       track("form_error", { form_id: type, field: missing.join(",") });
@@ -27,10 +40,17 @@ export function ContactForm({ type, fields, cta }: { type: "contact" | "employer
       const res = await fetch("/api/lead/", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ type, contact: values, attribution: getAttribution(), ids: getIds(), page: location.href }),
+        body: JSON.stringify({
+          type,
+          contact: values,
+          consent: consent ? { given: agreed, text: consent } : undefined,
+          attribution: getAttribution(),
+          ids: getIds(),
+          page: location.href,
+        }),
       });
       if (!res.ok) throw new Error(String(res.status));
-      track(type === "employer" ? "job_post_submit" : "generate_lead", { form_id: type });
+      track(type === "employer" ? "job_post_submit" : type === "story" ? "story_submit" : "generate_lead", { form_id: type });
       router.push(`/thanks/${type}/`);
     } catch {
       setError("Something went wrong. Please try again or call us.");
@@ -67,6 +87,12 @@ export function ContactForm({ type, fields, cta }: { type: "contact" | "employer
           })()}
         </label>
       ))}
+      {consent && (
+        <label className="flex gap-3 text-sm leading-relaxed text-ink-soft">
+          <input type="checkbox" checked={agreed} onChange={(e) => setAgreed(e.target.checked)} className="mt-1 size-4 shrink-0 accent-teal" />
+          <span>{consent}</span>
+        </label>
+      )}
       {error && <p className="text-sm font-medium text-coral-deep">{error}</p>}
       <button disabled={sending} className="w-full rounded-full bg-teal px-6 py-3.5 font-semibold text-white transition hover:bg-teal-deep disabled:opacity-60">
         {sending ? "Sending…" : cta}

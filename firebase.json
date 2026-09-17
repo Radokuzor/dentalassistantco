@@ -9,6 +9,21 @@
     ],
     "redirects": [
       {
+        "source": "/blog/dental-assistant-demand-colorado{,/}",
+        "destination": "/blog/the-growing-demand-for-dental-assistants-in-colorado/",
+        "type": 301
+      },
+      {
+        "source": "/blog/additional-responsibilities-edda{,/}",
+        "destination": "/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda/",
+        "type": 301
+      },
+      {
+        "source": "/blog/difference-dental-assistant-expanded-duties-dental-assistant{,/}",
+        "destination": "/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda/",
+        "type": 301
+      },
+      {
         "source": "/programs/edda-test{,/**}",
         "destination": "/programs/expanded-duties-dental-assistant/",
         "type": 301
@@ -40,7 +55,7 @@
       },
       {
         "source": "/live-patient-clinics{,/**}",
-        "destination": "/programs/dental-assistant/",
+        "destination": "/blog/live-patient-clinic-advantages-dental-assisting-education/",
         "type": 301
       },
       {
@@ -65,7 +80,7 @@
       },
       {
         "source": "/student-services{,/**}",
-        "destination": "/resources/",
+        "destination": "/former-aida-students/",
         "type": 301
       },
       {
@@ -100,12 +115,12 @@
       },
       {
         "source": "/student-refund-policy{,/**}",
-        "destination": "/about-us/",
+        "destination": "/former-aida-students/",
         "type": 301
       },
       {
         "source": "/transcriptdiplomacertificate-financial-hold-exemption-policy{,/**}",
-        "destination": "/about-us/",
+        "destination": "/former-aida-students/",
         "type": 301
       },
       {
@@ -149,42 +164,12 @@
         "type": 302
       },
       {
-        "source": "/blog/additional-responsibilities-edda{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/become-dental-assistant-colorado-without-going-school{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
         "source": "/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting{,/}",
         "destination": "/blog/",
         "type": 302
       },
       {
-        "source": "/blog/can-become-dental-assistant-online{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/choose-dental-assisting-school-thats-right{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
         "source": "/blog/considering-dental-assistant-career{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/danb-certification-required-colorado{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/dental-assistant-demand-colorado{,/}",
         "destination": "/blog/",
         "type": 302
       },
@@ -199,32 +184,12 @@
         "type": 302
       },
       {
-        "source": "/blog/dental-assisting-school-hard{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
         "source": "/blog/dental-assisting-vs-medical-assisting-career-path{,/}",
         "destination": "/blog/",
         "type": 302
       },
       {
-        "source": "/blog/difference-dental-assistant-expanded-duties-dental-assistant{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
         "source": "/blog/eco-friendly-practices-how-dental-assistants-can-contribute{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/highest-paying-dental-assistant-job{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/how-long-does-it-take-to-become-a-dental-assistant{,/}",
         "destination": "/blog/",
         "type": 302
       },
@@ -249,22 +214,12 @@
         "type": 302
       },
       {
-        "source": "/blog/live-patient-clinic-advantages-dental-assisting-education{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
         "source": "/blog/skills-gain-dental-assistant-training{,/}",
         "destination": "/blog/",
         "type": 302
       },
       {
         "source": "/blog/the-difference-between-dental-assistant-and-dental-hygienist-careers{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/the-growing-demand-for-dental-assistants-in-colorado{,/}",
         "destination": "/blog/",
         "type": 302
       },
@@ -280,11 +235,6 @@
       },
       {
         "source": "/blog/top-4-dental-assisting-myths-debunked{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda{,/}",
         "destination": "/blog/",
         "type": 302
       }

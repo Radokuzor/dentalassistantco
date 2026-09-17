@@ -5,27 +5,38 @@
 import fs from "node:fs";
 
 const cdx = JSON.parse(fs.readFileSync("data/wayback/cdx-index.json", "utf8")).slice(1);
+// Testimonial URLs point at /stories/ once it has real, permissioned stories (web/src/data/stories.json).
+const hasStories = JSON.parse(fs.readFileSync("web/src/data/stories.json", "utf8")).length > 0;
+const storiesOr = (fallback) => (hasStories ? "/stories/" : fallback);
 const written = new Set(fs.readdirSync("web/content/blog").map((f) => f.replace(/\.md$/, "")));
 const legacySlugs = [...new Set(cdx.map(([url]) => url.match(/\/blog\/([a-z0-9-]+)\/?$/)?.[1]).filter((s) => s && s !== "page"))];
 
+// Legacy posts that target the same query as a stronger post are merged into it (docs/06-content-plan.md).
+const consolidated = {
+  "dental-assistant-demand-colorado": "the-growing-demand-for-dental-assistants-in-colorado",
+  "additional-responsibilities-edda": "understanding-the-role-of-expanded-duties-dental-assistants-edda",
+  "difference-dental-assistant-expanded-duties-dental-assistant": "understanding-the-role-of-expanded-duties-dental-assistants-edda",
+};
+
 const permanent = [
+  ...Object.entries(consolidated).map(([from, to]) => [`/blog/${from}{,/}`, `/blog/${to}/`]),
   ["/programs/edda-test{,/**}", "/programs/expanded-duties-dental-assistant/"],
   ["/job-search{,/**}", "/jobs/"],
   ["/apply-online{,/**}", "/find-a-program/"],
   ["/book-tour{,/**}", "/find-a-program/"],
   ["/lp{,/**}", "/find-a-program/"],
   ["/why-choose-aida{,/**}", "/programs/dental-assistant/"],
-  ["/live-patient-clinics{,/**}", "/programs/dental-assistant/"],
-  ["/student-testimonials{,/**}", "/programs/dental-assistant/"],
-  ["/testimonials{,/**}", "/programs/dental-assistant/"],
-  ["/employer-testimonials{,/**}", "/hire/"],
+  ["/live-patient-clinics{,/**}", "/blog/live-patient-clinic-advantages-dental-assisting-education/"],
+  ["/student-testimonials{,/**}", storiesOr("/programs/dental-assistant/")],
+  ["/testimonials{,/**}", storiesOr("/programs/dental-assistant/")],
+  ["/employer-testimonials{,/**}", storiesOr("/hire/")],
   ["/about-us/dental-assistant-instructors{,/**}", "/about-us/"],
-  ["/student-services{,/**}", "/resources/"],
+  ["/student-services{,/**}", "/former-aida-students/"],
   ["/video-tutorials{,/**}", "/resources/"],
   ...["", "-apply-online", "-book-tour", "-contact-us"].map((s) => [`/thank-you${s}{,/**}`, "/"]),
   ["/locations/mesa-arizona-3{,/**}", "/"],
-  ["/student-refund-policy{,/**}", "/about-us/"],
-  ["/transcriptdiplomacertificate-financial-hold-exemption-policy{,/**}", "/about-us/"],
+  ["/student-refund-policy{,/**}", "/former-aida-students/"],
+  ["/transcriptdiplomacertificate-financial-hold-exemption-policy{,/**}", "/former-aida-students/"],
   ["/feed{,/**}", "/feed.xml"],
   ["/sitemap_index.xml", "/sitemap.xml"],
   ["/*-sitemap.xml", "/sitemap.xml"],
@@ -34,7 +45,7 @@ const permanent = [
 ].map(([source, destination]) => ({ source, destination, type: 301 }));
 
 const temporary = legacySlugs
-  .filter((slug) => !written.has(slug))
+  .filter((slug) => !written.has(slug) && !(slug in consolidated))
   .map((slug) => ({ source: `/blog/${slug}{,/}`, destination: "/blog/", type: 302 }));
 
 const config = {

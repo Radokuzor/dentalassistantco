@@ -121,7 +121,7 @@ export const collect = onRequest({ region: REGION, memory: "256MiB", maxInstance
 
 // ---------- lead intake ----------
 
-const LEAD_TYPES = new Set(["program_match", "contact", "employer"]);
+const LEAD_TYPES = new Set(["program_match", "contact", "employer", "story"]);
 
 export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 5 }, async (req, res) => {
   if (req.method !== "POST" || !sameOrigin(req)) {
@@ -163,7 +163,12 @@ export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 
   res.status(200).json({ ok: true, id: ref.id });
 });
 
-const LEAD_LABEL: Record<string, string> = { program_match: "🎓 New program lead", contact: "✉️ New contact message", employer: "🦷 New employer / job post" };
+const LEAD_LABEL: Record<string, string> = {
+  program_match: "🎓 New program lead",
+  contact: "✉️ New contact message",
+  employer: "🦷 New employer / job post",
+  story: "⭐ New story submission (verify before publishing)",
+};
 
 export const onLeadCreated = onDocumentCreated(
   { document: "dac_leads/{id}", region: REGION, secrets: [TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID] },

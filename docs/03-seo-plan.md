@@ -35,16 +35,21 @@ Firebase Hosting can't return HTTP 410, so retired URLs either 301 to the closes
 | `/programs/edda-test/` | 301 | `/programs/expanded-duties-dental-assistant/` |
 | `/job-search/` | 301 | `/jobs/` |
 | `/apply-online/`, `/book-tour/`, `/lp/` | 301 | `/find-a-program/` |
-| `/why-choose-aida/`, `/live-patient-clinics/`, `/student-testimonials/**`, `/testimonials/**` | 301 | `/programs/dental-assistant/` (switch testimonials to `/stories/` once that page exists) |
+| `/why-choose-aida/`, `/student-testimonials/**`, `/testimonials/**` | 301 | `/programs/dental-assistant/` (switch testimonials to `/stories/` once that page exists) |
+| `/live-patient-clinics/` | 301 | `/blog/live-patient-clinic-advantages-dental-assisting-education/` |
+| `/blog/dental-assistant-demand-colorado/` | 301 | `/blog/the-growing-demand-for-dental-assistants-in-colorado/` (consolidated) |
+| `/blog/additional-responsibilities-edda/`, `/blog/difference-dental-assistant-expanded-duties-dental-assistant/` | 301 | `/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda/` (consolidated) |
 | `/employer-testimonials/` | 301 | `/hire/` |
-| `/about-us/dental-assistant-instructors/`, `/student-refund-policy/`, `/transcriptdiplomacertificate-financial-hold-exemption-policy/` | 301 | `/about-us/` (explains the ownership change and where former AIDA students can get records) |
-| `/student-services/`, `/video-tutorials/` | 301 | `/resources/` |
+| `/about-us/dental-assistant-instructors/` | 301 | `/about-us/` |
+| `/student-services/`, `/student-refund-policy/`, `/transcriptdiplomacertificate-financial-hold-exemption-policy/` | 301 | `/former-aida-students/` (not-AIDA notice + CDHE transcript/complaint instructions) |
+| `/video-tutorials/` | 301 | `/resources/` |
 | `/thank-you*/`, `/locations/mesa-arizona-3/` | 301 | `/` |
 | `/feed/` | 301 | `/feed.xml` |
 | `/sitemap_index.xml`, `/*-sitemap.xml` | 301 | `/sitemap.xml` |
 | `/blog/category/**`, `/blog/author/**` | 301 | `/blog/` |
 | `/wp-admin/`, `/wp-login.php`, `/wp-content/**`, `/wp-json/**` | 404 | — (bot noise) |
 | New: `/find-a-program/`, `/jobs/`, `/hire/`, `/resources/`, `/partners/`, `/terms/`, `/thanks/*` (noindex) | new | — |
+| New: `/requirements/`, `/locations/denver/` (Princess Dental Staffing backlink target), `/former-aida-students/` (CDHE-backlink visitors), `/editorial-policy/`, `/advertising-disclosure/`, `/accessibility/` | new | — |
 
 ## Keyword clusters (priority order)
 Search volumes are **not measured yet**. Validate in Google Search Console after launch, or with Keyword Planner/Ahrefs.
