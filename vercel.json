@@ -27,7 +27,7 @@
       "permanent": true
     },
     {
-      "source": "/programs/edda-test/:path+",
+      "source": "/programs/edda-test/:path(.+)",
       "destination": "/programs/expanded-duties-dental-assistant/",
       "permanent": true
     },
@@ -37,7 +37,7 @@
       "permanent": true
     },
     {
-      "source": "/job-search/:path+",
+      "source": "/job-search/:path(.+)",
       "destination": "/jobs/",
       "permanent": true
     },
@@ -47,7 +47,7 @@
       "permanent": true
     },
     {
-      "source": "/apply-online/:path+",
+      "source": "/apply-online/:path(.+)",
       "destination": "/find-a-program/",
       "permanent": true
     },
@@ -57,7 +57,7 @@
       "permanent": true
     },
     {
-      "source": "/book-tour/:path+",
+      "source": "/book-tour/:path(.+)",
       "destination": "/find-a-program/",
       "permanent": true
     },
@@ -67,7 +67,7 @@
       "permanent": true
     },
     {
-      "source": "/lp/:path+",
+      "source": "/lp/:path(.+)",
       "destination": "/find-a-program/",
       "permanent": true
     },
@@ -77,7 +77,7 @@
       "permanent": true
     },
     {
-      "source": "/why-choose-aida/:path+",
+      "source": "/why-choose-aida/:path(.+)",
       "destination": "/programs/dental-assistant/",
       "permanent": true
     },
@@ -87,7 +87,7 @@
       "permanent": true
     },
     {
-      "source": "/live-patient-clinics/:path+",
+      "source": "/live-patient-clinics/:path(.+)",
       "destination": "/blog/live-patient-clinic-advantages-dental-assisting-education/",
       "permanent": true
     },
@@ -97,7 +97,7 @@
       "permanent": true
     },
     {
-      "source": "/student-testimonials/:path+",
+      "source": "/student-testimonials/:path(.+)",
       "destination": "/programs/dental-assistant/",
       "permanent": true
     },
@@ -107,7 +107,7 @@
       "permanent": true
     },
     {
-      "source": "/testimonials/:path+",
+      "source": "/testimonials/:path(.+)",
       "destination": "/programs/dental-assistant/",
       "permanent": true
     },
@@ -117,7 +117,7 @@
       "permanent": true
     },
     {
-      "source": "/employer-testimonials/:path+",
+      "source": "/employer-testimonials/:path(.+)",
       "destination": "/hire/",
       "permanent": true
     },
@@ -127,7 +127,7 @@
       "permanent": true
     },
     {
-      "source": "/about-us/dental-assistant-instructors/:path+",
+      "source": "/about-us/dental-assistant-instructors/:path(.+)",
       "destination": "/about-us/",
       "permanent": true
     },
@@ -137,7 +137,7 @@
       "permanent": true
     },
     {
-      "source": "/student-services/:path+",
+      "source": "/student-services/:path(.+)",
       "destination": "/former-aida-students/",
       "permanent": true
     },
@@ -147,7 +147,7 @@
       "permanent": true
     },
     {
-      "source": "/video-tutorials/:path+",
+      "source": "/video-tutorials/:path(.+)",
       "destination": "/resources/",
       "permanent": true
     },
@@ -157,7 +157,7 @@
       "permanent": true
     },
     {
-      "source": "/thank-you/:path+",
+      "source": "/thank-you/:path(.+)",
       "destination": "/",
       "permanent": true
     },
@@ -167,7 +167,7 @@
       "permanent": true
     },
     {
-      "source": "/thank-you-apply-online/:path+",
+      "source": "/thank-you-apply-online/:path(.+)",
       "destination": "/",
       "permanent": true
     },
@@ -177,7 +177,7 @@
       "permanent": true
     },
     {
-      "source": "/thank-you-book-tour/:path+",
+      "source": "/thank-you-book-tour/:path(.+)",
       "destination": "/",
       "permanent": true
     },
@@ -187,7 +187,7 @@
       "permanent": true
     },
     {
-      "source": "/thank-you-contact-us/:path+",
+      "source": "/thank-you-contact-us/:path(.+)",
       "destination": "/",
       "permanent": true
     },
@@ -197,7 +197,7 @@
       "permanent": true
     },
     {
-      "source": "/locations/mesa-arizona-3/:path+",
+      "source": "/locations/mesa-arizona-3/:path(.+)",
       "destination": "/",
       "permanent": true
     },
@@ -207,7 +207,7 @@
       "permanent": true
     },
     {
-      "source": "/student-refund-policy/:path+",
+      "source": "/student-refund-policy/:path(.+)",
       "destination": "/former-aida-students/",
       "permanent": true
     },
@@ -217,7 +217,7 @@
       "permanent": true
     },
     {
-      "source": "/transcriptdiplomacertificate-financial-hold-exemption-policy/:path+",
+      "source": "/transcriptdiplomacertificate-financial-hold-exemption-policy/:path(.+)",
       "destination": "/former-aida-students/",
       "permanent": true
     },
@@ -227,7 +227,7 @@
       "permanent": true
     },
     {
-      "source": "/feed/:path+",
+      "source": "/feed/:path(.+)",
       "destination": "/feed.xml",
       "permanent": true
     },
@@ -242,12 +242,12 @@
       "permanent": true
     },
     {
-      "source": "/blog/category/:path+",
+      "source": "/blog/category/:path(.+)",
       "destination": "/blog/",
       "permanent": true
     },
     {
-      "source": "/blog/author/:path+",
+      "source": "/blog/author/:path(.+)",
       "destination": "/blog/",
       "permanent": true
     },
@@ -354,7 +354,7 @@
   ],
   "headers": [
     {
-      "source": "/_next/static/:path+",
+      "source": "/_next/static/:path(.+)",
       "headers": [
         {
           "key": "Cache-Control",
@@ -363,7 +363,7 @@
       ]
     },
     {
-      "source": "/images/:path+",
+      "source": "/images/:path(.+)",
       "headers": [
         {
           "key": "Cache-Control",

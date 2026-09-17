@@ -85,15 +85,15 @@ console.log(`firebase.json: ${permanent.length} permanent + ${temporary.length} 
 // Vercel uses path-to-regexp instead of Firebase globs. Vercel reads vercel.json before the build runs,
 // so commit the regenerated file whenever the redirect map changes.
 // With trailingSlash on, Vercel doesn't match "/x/:path*" against "/x/" (it 404s), so a Firebase
-// "/x{,/**}" becomes two rules: "/x{/}?" for the page itself and "/x/:path+" for anything below it.
+// "/x{,/**}" becomes two rules: "/x{/}?" for the page itself and "/x/:path(.+)" for anything below it (a regex, so nested paths with a trailing slash match too).
 const toVercel = (src) => {
   if (src === "**") return ["/:path*"];
   if (src === "/*-sitemap.xml") return ["/:file(.+-sitemap\\.xml)"];
   if (src.endsWith("{,/**}")) {
     const base = src.slice(0, -"{,/**}".length);
-    return [`${base}{/}?`, `${base}/:path+`];
+    return [`${base}{/}?`, `${base}/:path(.+)`];
   }
-  if (src.endsWith("/**")) return [`${src.slice(0, -3)}/:path+`];
+  if (src.endsWith("/**")) return [`${src.slice(0, -3)}/:path(.+)`];
   return [src.replace(/\{,\/\}$/, "{/}?")];
 };
 const functionUrl = (id) => `https://us-central1-take-shots-f1a99.cloudfunctions.net/${id}`;
