@@ -84,13 +84,18 @@ console.log(`firebase.json: ${permanent.length} permanent + ${temporary.length} 
 
 // Vercel uses path-to-regexp instead of Firebase globs. Vercel reads vercel.json before the build runs,
 // so commit the regenerated file whenever the redirect map changes.
-const toVercel = (src) =>
-  src
-    .replace(/\{,\/\*\*\}$/, "/:path*")
-    .replace(/\{,\/\}$/, "{/}?")
-    .replace(/\/\*\*$/, "/:path*")
-    .replace("/*-sitemap.xml", "/:file(.+-sitemap\\.xml)")
-    .replace(/^\*\*$/, "/:path*");
+// With trailingSlash on, Vercel doesn't match "/x/:path*" against "/x/" (it 404s), so a Firebase
+// "/x{,/**}" becomes two rules: "/x{/}?" for the page itself and "/x/:path+" for anything below it.
+const toVercel = (src) => {
+  if (src === "**") return ["/:path*"];
+  if (src === "/*-sitemap.xml") return ["/:file(.+-sitemap\\.xml)"];
+  if (src.endsWith("{,/**}")) {
+    const base = src.slice(0, -"{,/**}".length);
+    return [`${base}{/}?`, `${base}/:path+`];
+  }
+  if (src.endsWith("/**")) return [`${src.slice(0, -3)}/:path+`];
+  return [src.replace(/\{,\/\}$/, "{/}?")];
+};
 const functionUrl = (id) => `https://us-central1-take-shots-f1a99.cloudfunctions.net/${id}`;
 
 const vercel = {
@@ -100,16 +105,13 @@ const vercel = {
   buildCommand: "npm --prefix web run build",
   outputDirectory: "web/out",
   trailingSlash: true,
-  redirects: config.hosting.redirects.map(({ source, destination, type }) => ({
-    source: toVercel(source),
-    destination,
-    permanent: type === 301,
-  })),
-  rewrites: config.hosting.rewrites.map(({ source, function: fn }) => ({
-    source: toVercel(source),
-    destination: functionUrl(fn.functionId),
-  })),
-  headers: config.hosting.headers.map(({ source, headers }) => ({ source: toVercel(source), headers })),
+  redirects: config.hosting.redirects.flatMap(({ source, destination, type }) =>
+    toVercel(source).map((s) => ({ source: s, destination, permanent: type === 301 })),
+  ),
+  rewrites: config.hosting.rewrites.flatMap(({ source, function: fn }) =>
+    toVercel(source).map((s) => ({ source: s, destination: functionUrl(fn.functionId) })),
+  ),
+  headers: config.hosting.headers.flatMap(({ source, headers }) => toVercel(source).map((s) => ({ source: s, headers }))),
 };
 
 fs.writeFileSync("vercel.json", JSON.stringify(vercel, null, 2) + "\n");
