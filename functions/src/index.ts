@@ -368,3 +368,5 @@ export const weeklyDigest = onSchedule(
     await telegram(formatStats(`Weekly report · ${from.toISOString().slice(0, 10)} → ${to.toISOString().slice(0, 10)}`, s, prev));
   },
 );
+
+export { admin } from "./admin";

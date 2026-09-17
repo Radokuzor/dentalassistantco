@@ -58,6 +58,7 @@ const config = {
     rewrites: [
       { source: "/api/collect{,/}", function: { functionId: "collect", region: "us-central1" } },
       { source: "/api/lead{,/}", function: { functionId: "lead", region: "us-central1" } },
+      { source: "/api/admin{,/}", function: { functionId: "admin", region: "us-central1" } },
     ],
     headers: [
       { source: "/_next/static/**", headers: [{ key: "Cache-Control", value: "public, max-age=31536000, immutable" }] },

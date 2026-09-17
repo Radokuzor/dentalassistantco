@@ -6,6 +6,20 @@ import { initAnalytics, track } from "@/lib/analytics";
 
 const SCROLL_MARKS = [25, 50, 75, 90];
 
+/** Short, readable name for a clicked element. Links/buttons use their full text; anything else uses
+ *  only its own text (not its children's), so a click on a big section isn't labeled with the whole section. */
+function clickLabel(target: HTMLElement, interactive: boolean) {
+  const clean = (s: string) => s.trim().replace(/\s+/g, " ").slice(0, 60);
+  const explicit = target.dataset.trackLabel || target.getAttribute("aria-label") || target.getAttribute("alt");
+  if (explicit) return clean(explicit);
+  if (interactive) return clean(target.textContent ?? "");
+  const own = Array.from(target.childNodes)
+    .filter((n) => n.nodeType === Node.TEXT_NODE)
+    .map((n) => n.textContent)
+    .join(" ");
+  return clean(own) || `<${target.tagName.toLowerCase()}>`;
+}
+
 /** Site-wide automatic tracking. Explicit events (quiz, forms) call `track` directly. */
 export function AnalyticsProvider() {
   const pathname = usePathname();
@@ -39,7 +53,7 @@ export function AnalyticsProvider() {
         vw: window.innerWidth,
         section: target.closest<HTMLElement>("[data-section]")?.dataset.section ?? "page",
         tag: target.tagName.toLowerCase(),
-        label: (target.dataset.trackLabel || target.getAttribute("aria-label") || target.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60),
+        label: clickLabel(target, Boolean(el)),
         interactive: Boolean(el),
       });
 

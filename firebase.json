@@ -253,6 +253,13 @@
           "functionId": "lead",
           "region": "us-central1"
         }
+      },
+      {
+        "source": "/api/admin{,/}",
+        "function": {
+          "functionId": "admin",
+          "region": "us-central1"
+        }
       }
     ],
     "headers": [

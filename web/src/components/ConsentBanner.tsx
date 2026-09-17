@@ -6,7 +6,11 @@ import { getConsent, setConsent, type Consent } from "@/lib/analytics";
 
 export function ConsentBanner() {
   const [open, setOpen] = useState(false);
-  useEffect(() => setOpen(getConsent() === null), []);
+  // Not shown on the owner's dashboard or inside its heatmap previews (framed pages).
+  useEffect(
+    () => setOpen(getConsent() === null && !location.pathname.startsWith("/admin") && window.self === window.top),
+    [],
+  );
   if (!open) return null;
 
   const choose = (value: Consent) => {

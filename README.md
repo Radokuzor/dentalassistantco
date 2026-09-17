@@ -39,6 +39,8 @@ Add a post: create `web/content/blog/<legacy-or-new-slug>.md` (see an existing p
 4. GA4 (`G-KW4Q59VD58`): mark `generate_lead`, `phone_click`, `job_post_submit`, `purchase_click`, `affiliate_click` as key events.
 
 ## Analytics report
+**Live dashboard:** https://dentalassistantco.com/admin/ (backup copy: https://take-shots-f1a99.web.app/admin/). Password-only login; the password is the `ADMIN_PASSWORD` Firebase secret (change it with `npx firebase-tools functions:secrets:set ADMIN_PASSWORD`, then redeploy `functions:admin`). After 8 wrong tries, an IP is locked out for 15 minutes. It shows live visitors, daily charts, the quiz funnel, sources, pages, click heatmaps over the real page, recent leads (with contact details), 404s, errors and page speed. Your own visits to /admin (and its previews) are not tracked.
+
 `npm run report` (or `npm run report -- --days 30`) pulls everything from Firestore into `data/analytics/report-<date>.md`: traffic, sources, landing pages, quiz funnel, leads by source, click heatmaps, dead clicks, 404s, JS errors and Core Web Vitals. A clicks CSV is written alongside it. Both are gitignored.
 
 ## Secrets

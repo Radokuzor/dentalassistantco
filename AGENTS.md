@@ -36,6 +36,7 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 | `scripts/fetch-wayback.mjs`, `scripts/repair-wayback.mjs` | Re-runnable archivers (skip files that already exist). **Don't re-pull unless needed.** |
 | `web/` | Next.js static site (App Router, Tailwind v4). `web/content/blog/*.md` = posts, `web/src/data/` = programs, jobs, partners, image credits |
 | `functions/` | Cloud Functions: `collect` (analytics), `lead` (forms), `onLeadCreated` (Telegram), `dailyDigest`, `weeklyDigest` |
+| `web/src/app/admin/`, `web/src/components/admin/`, `functions/src/admin.ts` | Password-protected analytics dashboard (/admin/). Password = `ADMIN_PASSWORD` secret; the admin function aggregates `dac_events`/`dac_leads` |
 | `scripts/analytics-report.mjs` | `npm run report`: Firestore analytics → `data/analytics/` (gitignored) |
 | `scripts/build-firebase-json.mjs` | Generates `firebase.json` (redirect map); runs before every web build |
 

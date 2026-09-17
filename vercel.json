@@ -350,6 +350,10 @@
     {
       "source": "/api/lead{/}?",
       "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/lead"
+    },
+    {
+      "source": "/api/admin{/}?",
+      "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/admin"
     }
   ],
   "headers": [

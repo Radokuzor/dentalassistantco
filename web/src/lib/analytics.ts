@@ -109,8 +109,11 @@ export function initAnalytics() {
   if (getConsent() === "granted") void loadThirdParty();
 }
 
+/** The owner's dashboard and its heatmap previews (pages framed inside /admin/) must not count as traffic. */
+const isInternalView = () => location.pathname.startsWith("/admin") || window.self !== window.top;
+
 export function track(name: string, params: Params = {}) {
-  if (typeof window === "undefined") return;
+  if (typeof window === "undefined" || isInternalView()) return;
   const { sid, isNew } = getSid();
   const payload = {
     name,

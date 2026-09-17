@@ -73,6 +73,8 @@ dac_dailyStats/{yyyy-mm-dd}  aggregated by the scheduled function
 The (default) Firestore database is **shared with another app** (`games`, `shot_content`), so every collection here has a `dac_` prefix. Only Cloud Functions (Admin SDK) touch these collections. **Never deploy Firestore rules from this repo**; the rules belong to the other app.
 
 ## How to use the data (monthly review loop)
+Day to day, open **/admin/** (password-protected dashboard; see README). For offline analysis, run `npm run report`.
+
 1. **Search Console:** find queries at positions 5–20, then improve those posts (titles, FAQs, internal links).
 2. **GA4 funnel** (landing → quiz_start → generate_lead): fix the step with the largest drop.
 3. **`npm run report`:** check the click heatmaps and dead clicks on the quiz and top landing pages (writes `data/analytics/report-<date>.md` and a clicks CSV).
