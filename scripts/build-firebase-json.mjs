@@ -1,4 +1,4 @@
-// Generates firebase.json. The redirect map mirrors docs/03-seo-plan.md.
+// Generates firebase.json and vercel.json from one redirect map (mirrors docs/03-seo-plan.md).
 // Legacy blog slugs that haven't been rewritten yet get a temporary 302 to /blog/;
 // the redirect disappears automatically once web/content/blog/<slug>.md exists.
 // Run: node scripts/build-firebase-json.mjs   (also runs as part of `npm run build` in web/)
@@ -22,7 +22,7 @@ const permanent = [
   ["/about-us/dental-assistant-instructors{,/**}", "/about-us/"],
   ["/student-services{,/**}", "/resources/"],
   ["/video-tutorials{,/**}", "/resources/"],
-  ["/thank-you{,-apply-online,-book-tour,-contact-us}{,/**}", "/"],
+  ...["", "-apply-online", "-book-tour", "-contact-us"].map((s) => [`/thank-you${s}{,/**}`, "/"]),
   ["/locations/mesa-arizona-3{,/**}", "/"],
   ["/student-refund-policy{,/**}", "/about-us/"],
   ["/transcriptdiplomacertificate-financial-hold-exemption-policy{,/**}", "/about-us/"],
@@ -63,9 +63,43 @@ const config = {
     ],
   },
   functions: [{ source: "functions", codebase: "default", predeploy: ["npm --prefix \"$RESOURCE_DIR\" run build"] }],
-  firestore: { rules: "firestore.rules", indexes: "firestore.indexes.json" },
-  emulators: { functions: { port: 5001 }, firestore: { port: 8080 }, hosting: { port: 5000 }, ui: { enabled: true } },
+  // No `firestore` key on purpose: the (default) database is shared with another app (games, shot_content)
+  // that has its own security rules. Never deploy rules from this repo.
+  emulators: { functions: { port: 5001 }, hosting: { port: 5000 } },
 };
 
 fs.writeFileSync("firebase.json", JSON.stringify(config, null, 2) + "\n");
 console.log(`firebase.json: ${permanent.length} permanent + ${temporary.length} temporary redirects`);
+
+// Vercel uses path-to-regexp instead of Firebase globs. Vercel reads vercel.json before the build runs,
+// so commit the regenerated file whenever the redirect map changes.
+const toVercel = (src) =>
+  src
+    .replace(/\{,\/\*\*\}$/, "/:path*")
+    .replace(/\{,\/\}$/, "{/}?")
+    .replace(/\/\*\*$/, "/:path*")
+    .replace("/*-sitemap.xml", "/:file(.+-sitemap\\.xml)")
+    .replace(/^\*\*$/, "/:path*");
+const functionUrl = (id) => `https://us-central1-take-shots-f1a99.cloudfunctions.net/${id}`;
+
+const vercel = {
+  $schema: "https://openapi.vercel.sh/vercel.json",
+  framework: null,
+  installCommand: "npm ci --prefix web",
+  buildCommand: "npm --prefix web run build",
+  outputDirectory: "web/out",
+  trailingSlash: true,
+  redirects: config.hosting.redirects.map(({ source, destination, type }) => ({
+    source: toVercel(source),
+    destination,
+    permanent: type === 301,
+  })),
+  rewrites: config.hosting.rewrites.map(({ source, function: fn }) => ({
+    source: toVercel(source),
+    destination: functionUrl(fn.functionId),
+  })),
+  headers: config.hosting.headers.map(({ source, headers }) => ({ source: toVercel(source), headers })),
+};
+
+fs.writeFileSync("vercel.json", JSON.stringify(vercel, null, 2) + "\n");
+console.log(`vercel.json: ${vercel.redirects.length} redirects, ${vercel.rewrites.length} rewrites`);

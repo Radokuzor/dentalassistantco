@@ -1,0 +1,341 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": null,
+  "installCommand": "npm ci --prefix web",
+  "buildCommand": "npm --prefix web run build",
+  "outputDirectory": "web/out",
+  "trailingSlash": true,
+  "redirects": [
+    {
+      "source": "/programs/edda-test/:path*",
+      "destination": "/programs/expanded-duties-dental-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/job-search/:path*",
+      "destination": "/jobs/",
+      "permanent": true
+    },
+    {
+      "source": "/apply-online/:path*",
+      "destination": "/find-a-program/",
+      "permanent": true
+    },
+    {
+      "source": "/book-tour/:path*",
+      "destination": "/find-a-program/",
+      "permanent": true
+    },
+    {
+      "source": "/lp/:path*",
+      "destination": "/find-a-program/",
+      "permanent": true
+    },
+    {
+      "source": "/why-choose-aida/:path*",
+      "destination": "/programs/dental-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/live-patient-clinics/:path*",
+      "destination": "/programs/dental-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/student-testimonials/:path*",
+      "destination": "/programs/dental-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/testimonials/:path*",
+      "destination": "/programs/dental-assistant/",
+      "permanent": true
+    },
+    {
+      "source": "/employer-testimonials/:path*",
+      "destination": "/hire/",
+      "permanent": true
+    },
+    {
+      "source": "/about-us/dental-assistant-instructors/:path*",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/student-services/:path*",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/video-tutorials/:path*",
+      "destination": "/resources/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-apply-online/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-book-tour/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/thank-you-contact-us/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/locations/mesa-arizona-3/:path*",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/student-refund-policy/:path*",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/transcriptdiplomacertificate-financial-hold-exemption-policy/:path*",
+      "destination": "/about-us/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/:path*",
+      "destination": "/feed.xml",
+      "permanent": true
+    },
+    {
+      "source": "/sitemap_index.xml",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/:file(.+-sitemap\\.xml)",
+      "destination": "/sitemap.xml",
+      "permanent": true
+    },
+    {
+      "source": "/blog/category/:path*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/author/:path*",
+      "destination": "/blog/",
+      "permanent": true
+    },
+    {
+      "source": "/blog/3-reasons-new-dental-assistant-needs-pursue-continuing-education{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/5-reasons-love-dental-assisting{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/a-day-in-the-life-of-a-dental-assistant-what-to-expect{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/additional-responsibilities-edda{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/become-dental-assistant-colorado-without-going-school{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/can-become-dental-assistant-online{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/choose-dental-assisting-school-thats-right{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/considering-dental-assistant-career{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/danb-certification-required-colorado{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dental-assistant-demand-colorado{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dental-assistant-perfect-starting-point{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dental-assistants-critical-successful-dental-practice{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dental-assisting-school-hard{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/dental-assisting-vs-medical-assisting-career-path{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/difference-dental-assistant-expanded-duties-dental-assistant{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/eco-friendly-practices-how-dental-assistants-can-contribute{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/highest-paying-dental-assistant-job{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/how-long-does-it-take-to-become-a-dental-assistant{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/how-to-balance-work-family-and-dental-assisting-school{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/importance-continuing-education-dental-assistants{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/important-hands-dental-assistant-training{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/innovative-dental-technologies-dental-assistant{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/live-patient-clinic-advantages-dental-assisting-education{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/skills-gain-dental-assistant-training{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/the-difference-between-dental-assistant-and-dental-hygienist-careers{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/the-growing-demand-for-dental-assistants-in-colorado{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/the-role-of-dental-assistants-in-community-health-programs{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/tips-getting-hired-dental-assistant{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/top-4-dental-assisting-myths-debunked{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    },
+    {
+      "source": "/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda{/}?",
+      "destination": "/blog/",
+      "permanent": false
+    }
+  ],
+  "rewrites": [
+    {
+      "source": "/api/collect{/}?",
+      "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/collect"
+    },
+    {
+      "source": "/api/lead{/}?",
+      "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/lead"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/_next/static/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/images/:path*",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=2592000"
+        }
+      ]
+    },
+    {
+      "source": "/:path*",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    }
+  ]
+}

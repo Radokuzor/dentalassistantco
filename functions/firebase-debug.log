@@ -1,0 +1,32 @@
+[debug] [2026-09-17T13:15:25.068Z] ----------------------------------------------------------------------
+[debug] [2026-09-17T13:15:25.071Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\radOk\AppData\Local\npm-cache\_npx\de51b0ca3e460c76\node_modules\firebase-tools\lib\bin\firebase.js functions:list --debug
+[debug] [2026-09-17T13:15:25.071Z] CLI Version:   15.30.1
+[debug] [2026-09-17T13:15:25.071Z] Platform:      win32
+[debug] [2026-09-17T13:15:25.071Z] Node Version:  v20.12.0
+[debug] [2026-09-17T13:15:25.071Z] Detected Agent: claude-code_2-1-273_agent
+[debug] [2026-09-17T13:15:25.071Z] Time:          Thu Sep 17 2026 08:15:25 GMT-0500 (Central Daylight Time)
+[debug] [2026-09-17T13:15:25.071Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2026-09-17T13:15:25.255Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2026-09-17T13:15:25.256Z] > authorizing via signed-in user (radianceokuzor@gmail.com)
+[debug] [2026-09-17T13:15:25.256Z] [iam] checking project take-shots-f1a99 for permissions ["cloudfunctions.functions.list","firebase.projects.get","run.services.list"]
+[debug] [2026-09-17T13:15:25.264Z] Checked if tokens are valid: true, expires at: 1789654410628
+[debug] [2026-09-17T13:15:25.264Z] Checked if tokens are valid: true, expires at: 1789654410628
+[debug] [2026-09-17T13:15:25.265Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-shots-f1a99:testIamPermissions [none]
+[debug] [2026-09-17T13:15:25.266Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-shots-f1a99:testIamPermissions  x-goog-user-project=take-shots-f1a99
+[debug] [2026-09-17T13:15:25.266Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-shots-f1a99:testIamPermissions {"permissions":["cloudfunctions.functions.list","firebase.projects.get","run.services.list"]}
+[debug] [2026-09-17T13:15:25.498Z] <<< [apiv2][status] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-shots-f1a99:testIamPermissions 200
+[debug] [2026-09-17T13:15:25.499Z] <<< [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/take-shots-f1a99:testIamPermissions {"permissions":["cloudfunctions.functions.list","firebase.projects.get","run.services.list"]}
+[debug] [2026-09-17T13:15:25.499Z] Checked if tokens are valid: true, expires at: 1789654410628
+[debug] [2026-09-17T13:15:25.500Z] Checked if tokens are valid: true, expires at: 1789654410628
+[debug] [2026-09-17T13:15:25.500Z] >>> [apiv2][query] GET https://cloudfunctions.googleapis.com/v1/projects/take-shots-f1a99/locations/-/functions [none]
+[debug] [2026-09-17T13:15:25.703Z] <<< [apiv2][status] GET https://cloudfunctions.googleapis.com/v1/projects/take-shots-f1a99/locations/-/functions 403
+[debug] [2026-09-17T13:15:25.703Z] <<< [apiv2][body] GET https://cloudfunctions.googleapis.com/v1/projects/take-shots-f1a99/locations/-/functions {"error":{"code":403,"message":"Cloud Functions API has not been used in project take-shots-f1a99 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.","status":"PERMISSION_DENIED","details":[{"@type":"type.googleapis.com/google.rpc.ErrorInfo","reason":"SERVICE_DISABLED","domain":"googleapis.com","metadata":{"containerInfo":"take-shots-f1a99","activationUrl":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99","consumer":"projects/take-shots-f1a99","serviceTitle":"Cloud Functions API","service":"cloudfunctions.googleapis.com"}},{"@type":"type.googleapis.com/google.rpc.LocalizedMessage","locale":"en-US","message":"Cloud Functions API has not been used in project take-shots-f1a99 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry."},{"@type":"type.googleapis.com/google.rpc.Help","links":[{"description":"Google developers console API activation","url":"https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99"}]}]}}
+[debug] [2026-09-17T13:15:25.703Z] [functions] failed to list functions for take-shots-f1a99
+[debug] [2026-09-17T13:15:25.703Z] [functions] Request to https://cloudfunctions.googleapis.com/v1/projects/take-shots-f1a99/locations/-/functions had HTTP Error: 403, Cloud Functions API has not been used in project take-shots-f1a99 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+[debug] [2026-09-17T13:15:25.815Z] FirebaseError: Request to https://cloudfunctions.googleapis.com/v1/projects/take-shots-f1a99/locations/-/functions had HTTP Error: 403, Cloud Functions API has not been used in project take-shots-f1a99 before or it is disabled. Enable it by visiting https://console.developers.google.com/apis/api/cloudfunctions.googleapis.com/overview?project=take-shots-f1a99 then retry. If you enabled this API recently, wait a few minutes for the action to propagate to our systems and retry.
+    at responseToError (C:\Users\radOk\AppData\Local\npm-cache\_npx\de51b0ca3e460c76\node_modules\firebase-tools\lib\responseToError.js:53:12)
+    at RetryOperation._fn (C:\Users\radOk\AppData\Local\npm-cache\_npx\de51b0ca3e460c76\node_modules\firebase-tools\lib\apiv2.js:415:77)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to list functions for take-shots-f1a99

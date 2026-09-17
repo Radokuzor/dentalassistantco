@@ -74,7 +74,22 @@
         "type": 301
       },
       {
-        "source": "/thank-you{,-apply-online,-book-tour,-contact-us}{,/**}",
+        "source": "/thank-you{,/**}",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/thank-you-apply-online{,/**}",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/thank-you-book-tour{,/**}",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/thank-you-contact-us{,/**}",
         "destination": "/",
         "type": 301
       },
@@ -341,22 +356,12 @@
       ]
     }
   ],
-  "firestore": {
-    "rules": "firestore.rules",
-    "indexes": "firestore.indexes.json"
-  },
   "emulators": {
     "functions": {
       "port": 5001
     },
-    "firestore": {
-      "port": 8080
-    },
     "hosting": {
       "port": 5000
-    },
-    "ui": {
-      "enabled": true
     }
   }
 }

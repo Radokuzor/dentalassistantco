@@ -97,8 +97,8 @@ export const collect = onRequest({ region: REGION, memory: "256MiB", maxInstance
   };
 
   const batch = db.batch();
-  batch.create(db.collection("events").doc(), event);
-  const session = db.collection("sessions").doc(sid);
+  batch.create(db.collection("dac_events").doc(), event);
+  const session = db.collection("dac_sessions").doc(sid);
   batch.set(
     session,
     {
@@ -138,7 +138,7 @@ export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 
   const ip = clientIp(req);
   const ua = String(req.headers["user-agent"] ?? "");
 
-  const ref = await db.collection("leads").add({
+  const ref = await db.collection("dac_leads").add({
     type: b.type,
     contact,
     answers: b.answers ?? {},
@@ -162,7 +162,7 @@ export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 
 const LEAD_LABEL: Record<string, string> = { program_match: "🎓 New program lead", contact: "✉️ New contact message", employer: "🦷 New employer / job post" };
 
 export const onLeadCreated = onDocumentCreated(
-  { document: "leads/{id}", region: REGION, secrets: [TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID] },
+  { document: "dac_leads/{id}", region: REGION, secrets: [TELEGRAM_BOT_TOKEN, TELEGRAM_CHAT_ID] },
   async (event) => {
     const d = event.data?.data();
     if (!d) return;
@@ -212,7 +212,7 @@ const bump = (m: Map<string, number>, k: string) => m.set(k, (m.get(k) ?? 0) + 1
 async function aggregate(from: Date, to: Date): Promise<Stats> {
   const range = (col: string, field: string) =>
     db.collection(col).where(field, ">=", Timestamp.fromDate(from)).where(field, "<", Timestamp.fromDate(to));
-  const [events, leads] = await Promise.all([range("events", "ts").get(), range("leads", "createdAt").get()]);
+  const [events, leads] = await Promise.all([range("dac_events", "ts").get(), range("dac_leads", "createdAt").get()]);
 
   const sessions = new Set<string>();
   const visitors = new Set<string>();
@@ -332,7 +332,7 @@ export const dailyDigest = onSchedule(
     const to = denverMidnight(0);
     const [s, prev] = await Promise.all([aggregate(from, to), aggregate(denverMidnight(-2), from)]);
     const day = from.toISOString().slice(0, 10);
-    await db.collection("dailyStats").doc(day).set({ ...s, topPages: Object.fromEntries(s.topPages), topSources: Object.fromEntries(s.topSources), notFound: Object.fromEntries(s.notFound), from, to });
+    await db.collection("dac_dailyStats").doc(day).set({ ...s, topPages: Object.fromEntries(s.topPages), topSources: Object.fromEntries(s.topSources), notFound: Object.fromEntries(s.notFound), from, to });
     await telegram(formatStats(`Daily report · ${day}`, s, prev));
   },
 );
