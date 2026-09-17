@@ -20,22 +20,20 @@ Add images: `npm --prefix web run pexels -- "<query>" <name> [index]` (downloads
 Add a post: create `web/content/blog/<legacy-or-new-slug>.md` (see an existing post for the frontmatter).
 
 ## Deploying
-```bash
-npm --prefix web run build
-npx firebase-tools deploy --only hosting,functions   # NEVER deploy firestore: the database is shared with another app
-```
-- Firebase Hosting: https://take-shots-f1a99.web.app (live since 2026-09-17)
-- Cloud Functions (us-central1, Node 22): `collect`, `lead`, `onLeadCreated`, `dailyDigest`, `weeklyDigest`
-- `vercel.json` can also host the static site on Vercel. It proxies `/api/*` to the same functions.
-  **Pick one host for the domain** (see DNS below).
+- **Website → Vercel** (the domain's host, decided 2026-09-17). Vercel builds from GitHub `main` using `vercel.json`,
+  which also carries the redirect map and proxies `/api/collect` and `/api/lead` to Cloud Functions.
+  When you change redirects, keep `vercel.json` and `scripts/build-firebase-json.mjs` in sync.
+- **Backend → Firebase** (project `take-shots-f1a99`):
+  ```bash
+  npx firebase-tools deploy --only functions   # NEVER deploy firestore: the database is shared with another app
+  ```
+  Functions (us-central1, Node 22): `collect`, `lead`, `onLeadCreated`, `dailyDigest`, `weeklyDigest`.
+- Backup copy of the site: https://take-shots-f1a99.web.app (`npm --prefix web run build && npx firebase-tools deploy --only hosting`).
 
 ## Remaining go-live steps (owner)
-1. **Cloudflare DNS for dentalassistantco.com.** If Firebase Hosting serves the domain (set records to *DNS only* / grey cloud):
-   - Replace the apex `@` records with `A @ 199.36.158.100`
-   - Add `TXT @ hosting-site=take-shots-f1a99` (keep the existing `google-site-verification=K3Uu…` TXT)
-   - Change `www` from the Vercel CNAME to `CNAME www take-shots-f1a99.web.app`
-   - Remove the apex→www redirect and remove the domain from the Vercel project
-   If Vercel serves the domain instead, keep Vercel's records and delete the custom domains from Firebase Hosting.
+1. **Domain on Vercel:** in the Vercel project → Settings → Domains, add `dentalassistantco.com` and `www.dentalassistantco.com`.
+   Set the **apex as primary** and have www redirect to it (the site's canonical URLs use the apex). Add the DNS records
+   Vercel shows in Cloudflare, set to *DNS only* (grey cloud). Keep the existing `google-site-verification` TXT record.
 2. Rotate the Telegram bot token in @BotFather, then `npx firebase-tools functions:secrets:set TELEGRAM_BOT_TOKEN` and redeploy functions.
 3. Google Search Console: add a **Domain** property for `dentalassistantco.com` and click Verify (the TXT is already in DNS), then submit `/sitemap.xml`. Do the same in Bing Webmaster Tools (it can import from Search Console).
 4. GA4 (`G-KW4Q59VD58`): mark `generate_lead`, `phone_click`, `job_post_submit`, `purchase_click`, `affiliate_click` as key events.

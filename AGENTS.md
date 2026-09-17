@@ -42,7 +42,8 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 - Firebase project: `take-shots-f1a99` (web config in `web/src/lib/firebase.ts`; GA4 measurement ID `G-KW4Q59VD58`)
 - Hosting: Firebase Hosting serving the static export in `web/out`; `/api/collect` and `/api/lead` rewrite to Functions. Functions need the **Blaze** plan.
 - Images: Pexels API (`PEXELS_API_KEY` in `.env`), fetched at build/authoring time and credited.
-- Live: https://take-shots-f1a99.web.app (custom domain pending DNS at Cloudflare). Functions: Node 22 runtime, firebase-admin 13 (v14 needs local Node 22).
+- **Hosting decision (2026-09-17): Vercel serves dentalassistantco.com** via `vercel.json` (it proxies `/api/*` to Functions). Firebase Hosting (take-shots-f1a99.web.app) is only a backup. Keep the redirect maps in `vercel.json` and `scripts/build-firebase-json.mjs` in sync.
+- Functions: Node 22 runtime, firebase-admin 13 (v14 needs local Node 22). The origin allowlist in `functions/src/index.ts` includes `dentalassistantco*.vercel.app`.
 - Alerts: Telegram bot (`TELEGRAM_BOT_TOKEN`, `TELEGRAM_CHAT_ID` as Functions secrets)
 
 ## Sources of truth for Colorado facts
@@ -65,3 +66,7 @@ Facts gathered 2026-09-17 (re-verify before publishing):
   Not deployed yet; see the README deploy checklist.
 - 2026-09-17: **Deployed.** Hosting and all 5 functions are live; an end-to-end test lead passed and was deleted. Custom domains were added in Firebase
   but are waiting on Cloudflare DNS changes (www currently CNAMEs to Vercel).
+- 2026-09-17: Gap pass against the Wayback inventory and backlinks. Added `/requirements/`, `/locations/denver/`, `/former-aida-students/`,
+  `/editorial-policy/`, `/advertising-disclosure/`, `/accessibility/`; added Pima, Concorde and Academy for Dental Assisting Careers
+  to `programs.ts` (field `weeks` → `length` + `kind`); rewrote 10 legacy posts (13 total) and 301-consolidated 3 duplicates.
+  18 legacy posts still 302 to `/blog/` (Tier 2 in `docs/06-content-plan.md`).

@@ -56,7 +56,11 @@ async function telegram(text: string) {
 
 const sameOrigin = (req: Request) => {
   const origin = String(req.headers.origin ?? req.headers.referer ?? "");
-  return !origin || /^https:\/\/(www\.)?dentalassistantco\.com|^https:\/\/take-shots-f1a99\.(web\.app|firebaseapp\.com)|^http:\/\/localhost/.test(origin);
+  // Production domain (served by Vercel), Firebase URLs, this project's Vercel previews, and local dev.
+  return (
+    !origin ||
+    /^https:\/\/(www\.)?dentalassistantco\.com|^https:\/\/take-shots-f1a99\.(web\.app|firebaseapp\.com)|^https:\/\/dentalassistantco[a-z0-9-]*\.vercel\.app|^http:\/\/localhost/.test(origin)
+  );
 };
 
 // ---------- analytics collection ----------
