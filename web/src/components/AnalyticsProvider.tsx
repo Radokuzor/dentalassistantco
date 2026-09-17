@@ -28,6 +28,21 @@ export function AnalyticsProvider() {
         clicks.length = 0;
       }
 
+      // Heatmap data for every click (our replacement for third-party recording tools).
+      // x is a percentage of page width so desktop and mobile clicks can be compared; y is px from the top.
+      const target = (el ?? e.target) as HTMLElement;
+      const doc = document.documentElement;
+      track("click", {
+        x_pct: Math.round((e.pageX / doc.scrollWidth) * 1000) / 10,
+        y: Math.round(e.pageY),
+        doc_h: doc.scrollHeight,
+        vw: window.innerWidth,
+        section: target.closest<HTMLElement>("[data-section]")?.dataset.section ?? "page",
+        tag: target.tagName.toLowerCase(),
+        label: (target.dataset.trackLabel || target.getAttribute("aria-label") || target.textContent || "").trim().replace(/\s+/g, " ").slice(0, 60),
+        interactive: Boolean(el),
+      });
+
       if (!el) return;
       const text = (el.dataset.trackLabel || el.textContent || "").trim().slice(0, 80);
       const section = el.closest<HTMLElement>("[data-section]")?.dataset.section ?? "page";

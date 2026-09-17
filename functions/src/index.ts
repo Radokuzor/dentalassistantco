@@ -204,6 +204,8 @@ type Stats = {
   topPages: [string, number][];
   topSources: [string, number][];
   notFound: [string, number][];
+  topClicks: [string, number][];
+  deadClicks: [string, number][];
   devices: Record<string, number>;
   avgEngagedSec: number;
 };
@@ -228,6 +230,8 @@ async function aggregate(from: Date, to: Date): Promise<Stats> {
   const pages = new Map<string, number>();
   const sources = new Map<string, number>();
   const notFound = new Map<string, number>();
+  const clicks = new Map<string, number>();
+  const deadClicks = new Map<string, number>();
   const devices = new Map<string, number>();
   const quiz = { start: 0, step: {} as Record<string, number>, abandon: 0, submit: 0 };
   let pageViews = 0;
@@ -269,6 +273,11 @@ async function aggregate(from: Date, to: Date): Promise<Stats> {
       case "not_found":
         bump(notFound, e.params?.path ?? e.path ?? "?");
         break;
+      case "click": {
+        const key = `${e.path ?? "?"} · ${e.params?.label || e.params?.tag || "?"}`;
+        bump(e.params?.interactive ? clicks : deadClicks, key);
+        break;
+      }
       case "engaged_time":
         engaged += Number(e.params?.seconds) || 0;
         engagedCount++;
@@ -290,6 +299,8 @@ async function aggregate(from: Date, to: Date): Promise<Stats> {
     topPages: top(pages),
     topSources: top(sources),
     notFound: top(notFound),
+    topClicks: top(clicks, 8),
+    deadClicks: top(deadClicks, 5),
     devices: Object.fromEntries(devices),
     avgEngagedSec: engagedCount ? Math.round(engaged / engagedCount) : 0,
   };
@@ -315,6 +326,8 @@ function formatStats(title: string, s: Stats, prev?: Stats) {
     `Devices: ${JSON.stringify(s.devices)}`,
     `<b>Top pages</b>\n${list(s.topPages)}`,
     `<b>Top sources</b>\n${list(s.topSources)}`,
+    s.topClicks.length ? `<b>Top clicks</b>\n${list(s.topClicks)}` : "",
+    s.deadClicks.length ? `<b>Dead clicks (people expect these to be links)</b>\n${list(s.deadClicks)}` : "",
     s.notFound.length ? `<b>404s (add redirects?)</b>\n${list(s.notFound)}` : "",
   ]
     .filter(Boolean)
@@ -341,7 +354,7 @@ export const dailyDigest = onSchedule(
     const to = denverMidnight(0);
     const [s, prev] = await Promise.all([aggregate(from, to), aggregate(denverMidnight(-2), from)]);
     const day = from.toISOString().slice(0, 10);
-    await db.collection("dac_dailyStats").doc(day).set({ ...s, topPages: Object.fromEntries(s.topPages), topSources: Object.fromEntries(s.topSources), notFound: Object.fromEntries(s.notFound), from, to });
+    await db.collection("dac_dailyStats").doc(day).set({ ...s, topPages: Object.fromEntries(s.topPages), topSources: Object.fromEntries(s.topSources), notFound: Object.fromEntries(s.notFound), topClicks: Object.fromEntries(s.topClicks), deadClicks: Object.fromEntries(s.deadClicks), from, to });
     await telegram(formatStats(`Daily report · ${day}`, s, prev));
   },
 );

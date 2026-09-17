@@ -18,8 +18,8 @@ export default function Privacy() {
         <h2>Information we collect</h2>
         <ul>
           <li><strong>Information you give us:</strong> name, email, phone, ZIP code, quiz answers, messages, and (for employers) practice and job details.</li>
-          <li><strong>Usage information:</strong> pages viewed, clicks, scroll depth, time on page, referring site, campaign (UTM) tags, device type, browser language and time zone, and performance measurements.</li>
-          <li><strong>Cookies:</strong> if you accept analytics cookies, we set a first-party visitor ID and use Google Analytics and Microsoft Clarity (which may record anonymized page interactions). If you choose &quot;Essential only,&quot; we record only anonymous, cookieless page activity.</li>
+          <li><strong>Usage information:</strong> pages viewed, clicks (including where on the page you clicked), scroll depth, time on page, referring site, campaign (UTM) tags, device type, browser language and time zone, and performance measurements.</li>
+          <li><strong>Cookies:</strong> if you accept analytics cookies, we set a first-party visitor ID and use Google Analytics (Firebase). We do not use session-recording tools. If you choose &quot;Essential only,&quot; we record only anonymous, cookieless page activity.</li>
           <li><strong>Consent records:</strong> when you agree to be contacted, we store the consent language, time, IP address, browser and page URL as proof of consent.</li>
         </ul>
         <h2>How we use it</h2>
@@ -29,7 +29,7 @@ export default function Privacy() {
           If you check the consent box on a form, we may share your contact information and answers with the schools,
           employers or staffing agencies listed on our <Link href="/partners/">Partners page</Link>, and they may contact you.
           This may count as a &quot;sale&quot; of personal data under some state laws. We also use service providers
-          (Google Firebase, Google Analytics, Microsoft Clarity, and Telegram for internal notifications) that process data for us.
+          (Google Firebase, Google Analytics, and Telegram for internal notifications) that process data for us.
         </p>
         <h2>Your choices and rights</h2>
         <ul>

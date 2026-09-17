@@ -9,10 +9,12 @@ the site based on that data.
 | 1. Product analytics | **GA4 via Firebase Analytics** (`G-KW4Q59VD58`) | Traffic, sources, conversions, funnels, audiences | Wired in code (`src/lib/analytics.ts`) |
 | 2. First-party event log | **Firestore `events` / `sessions` / `leads`**, written by the `collect` Cloud Function | Raw per-visitor journeys we own; exportable to BigQuery | Wired in code (`functions/src/index.ts`) |
 | 3. Real-time alerts and digests | **Telegram bot** | Instant lead and job alerts; daily and weekly KPI digest | Wired in code (server-side only) |
-| 4. Behavior | **Microsoft Clarity** (free heatmaps and session recordings) | Why people drop off; rage clicks, dead clicks | Needs a Clarity project ID → `NEXT_PUBLIC_CLARITY_ID` |
+| 4. Behavior | **First-party click heatmaps**: every click is stored with its page position (`click` event) | Where people click, dead clicks, rage clicks | Live. Read it with `npm run report`; top and dead clicks also appear in the Telegram digests |
 | + Search | Google Search Console, Bing Webmaster Tools | Queries, impressions, rankings, index coverage | Owner must verify the domain (DNS TXT) |
 
-Consent: a banner sets Google **Consent Mode v2**. Analytics and Clarity load only after the visitor accepts, except
+Decision (2026-09-17): **no third-party behavior tools** (Clarity was dropped). All analytics lives in Firebase.
+
+Consent: a banner sets Google **Consent Mode v2**. GA4 loads only after the visitor accepts, except
 for the cookieless first-party page-view ping, which stores no personal data.
 
 ## Identity model
@@ -44,6 +46,7 @@ for the cookieless first-party page-view ping, which stores no personal data.
 | `not_found` | path, referrer | 404 page (finds broken inherited links) |
 | `web_vitals` | name (LCP/CLS/INP/TTFB), value, rating | Every page |
 | `js_error` | message, source | `window.onerror` |
+| `click` | x_pct, y, doc_h, vw, section, tag, label, interactive | Every click (heatmaps; `interactive:false` = dead click) |
 | `rage_click` | selector | 3+ clicks within 600 ms |
 
 **GA4 key events (conversions):** `generate_lead`, `phone_click`, `job_post_submit`, `purchase_click`, `newsletter_signup`, `affiliate_click`.
@@ -72,7 +75,7 @@ The (default) Firestore database is **shared with another app** (`games`, `shot_
 ## How to use the data (monthly review loop)
 1. **Search Console:** find queries at positions 5–20, then improve those posts (titles, FAQs, internal links).
 2. **GA4 funnel** (landing → quiz_start → generate_lead): fix the step with the largest drop.
-3. **Clarity recordings:** watch 10 sessions of visitors who abandoned the quiz.
+3. **`npm run report`:** check the click heatmaps and dead clicks on the quiz and top landing pages (writes `data/analytics/report-<date>.md` and a clicks CSV).
 4. **`not_found` events:** add redirects for old inherited URLs that still get hits.
 5. **Leads by landing page:** write more content like the posts that produce leads.
 6. **A/B test** one thing per month (hero headline, CTA copy, quiz length) with a simple cookie-based split
@@ -83,6 +86,5 @@ The (default) Firestore database is **shared with another app** (`games`, `shot_
 - [x] Telegram secrets set (version 1)
 - [ ] Rotate the Telegram bot token (it was shared in chat)
 - [ ] In GA4, mark the key events above as conversions; link GA4 to Search Console
-- [ ] Create a Microsoft Clarity project and set `NEXT_PUBLIC_CLARITY_ID`
 - [ ] Verify the domain in Google Search Console and Bing
 - [ ] Optional: install the "Stream Firestore to BigQuery" extension and build a Looker Studio dashboard

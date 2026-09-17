@@ -37,7 +37,9 @@ Add a post: create `web/content/blog/<legacy-or-new-slug>.md` (see an existing p
 2. Rotate the Telegram bot token in @BotFather, then `npx firebase-tools functions:secrets:set TELEGRAM_BOT_TOKEN` and redeploy functions.
 3. Google Search Console: add a **Domain** property for `dentalassistantco.com` and click Verify (the TXT is already in DNS), then submit `/sitemap.xml`. Do the same in Bing Webmaster Tools (it can import from Search Console).
 4. GA4 (`G-KW4Q59VD58`): mark `generate_lead`, `phone_click`, `job_post_submit`, `purchase_click`, `affiliate_click` as key events.
-5. Microsoft Clarity (free): create a project and set `NEXT_PUBLIC_CLARITY_ID` in `web/.env.production`, then rebuild and redeploy.
+
+## Analytics report
+`npm run report` (or `npm run report -- --days 30`) pulls everything from Firestore into `data/analytics/report-<date>.md`: traffic, sources, landing pages, quiz funnel, leads by source, click heatmaps, dead clicks, 404s, JS errors and Core Web Vitals. A clicks CSV is written alongside it. Both are gitignored.
 
 ## Secrets
 `.env` (root, gitignored) holds `PEXELS_API_KEY`, `TELEGRAM_*`, and the path to the Admin SDK key.

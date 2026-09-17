@@ -28,7 +28,7 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 | `docs/04-relaunch-and-revenue.md` | Brand, funnels, revenue streams, launch phases, compliance, Firebase notes |
 | `docs/05-ui-plan.md` | Design tokens, **21st.dev component picks**, sitemap, wireframes, quiz spec |
 | `docs/06-content-plan.md` | Blog rewrite priority, new posts, city pages, production workflow |
-| `docs/07-analytics-plan.md` | GA4, first-party Firestore events, Telegram alerts, Clarity, event taxonomy |
+| `docs/07-analytics-plan.md` | GA4, first-party Firestore events and click heatmaps, Telegram alerts, event taxonomy (no Clarity/third-party trackers) |
 | `data/wayback/cdx-index.json` | Raw Wayback CDX index (388 unique URLs), the canonical list of old URLs |
 | `data/wayback/url-inventory.csv` | Same data as CSV |
 | `data/wayback/html/`, `data/wayback/text/` | Archived snapshots of every old content page (raw HTML + stripped text) |
@@ -36,6 +36,7 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 | `scripts/fetch-wayback.mjs`, `scripts/repair-wayback.mjs` | Re-runnable archivers (skip files that already exist). **Don't re-pull unless needed.** |
 | `web/` | Next.js static site (App Router, Tailwind v4). `web/content/blog/*.md` = posts, `web/src/data/` = programs, jobs, partners, image credits |
 | `functions/` | Cloud Functions: `collect` (analytics), `lead` (forms), `onLeadCreated` (Telegram), `dailyDigest`, `weeklyDigest` |
+| `scripts/analytics-report.mjs` | `npm run report`: Firestore analytics → `data/analytics/` (gitignored) |
 | `scripts/build-firebase-json.mjs` | Generates `firebase.json` (redirect map); runs before every web build |
 
 ## Infrastructure

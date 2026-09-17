@@ -1,7 +1,8 @@
 "use client";
 
-// Analytics core. Every event goes to our own `collect` function (first-party log in Firestore).
-// GA4 (via Firebase) and Microsoft Clarity load only after the visitor accepts analytics cookies.
+// Analytics core. Every event goes to our own `collect` function (first-party log in Firestore),
+// including click positions used for heatmaps. No third-party trackers besides Firebase Analytics (GA4),
+// which loads only after the visitor accepts analytics cookies.
 // Event names and params are documented in docs/07-analytics-plan.md.
 
 import type { Analytics } from "firebase/analytics";
@@ -95,15 +96,6 @@ async function loadThirdParty() {
   setConsent({ analytics_storage: "granted", ad_storage: "denied", ad_user_data: "denied", ad_personalization: "denied" });
   // page_view is sent manually on every route change, so disable the automatic one.
   ga = initializeAnalytics(firebaseApp(), { config: { send_page_view: false } });
-
-  const clarityId = process.env.NEXT_PUBLIC_CLARITY_ID;
-  if (clarityId && !document.getElementById("clarity")) {
-    const s = document.createElement("script");
-    s.id = "clarity";
-    s.async = true;
-    s.src = `https://www.clarity.ms/tag/${clarityId}`;
-    document.head.appendChild(s);
-  }
 }
 
 export function setConsent(value: Consent) {
