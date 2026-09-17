@@ -87,7 +87,7 @@ console.log(`firebase.json: ${permanent.length} permanent + ${temporary.length} 
 // With trailingSlash on, Vercel doesn't match "/x/:path*" against "/x/" (it 404s), so a Firebase
 // "/x{,/**}" becomes two rules: "/x{/}?" for the page itself and "/x/:path(.+)" for anything below it (a regex, so nested paths with a trailing slash match too).
 const toVercel = (src) => {
-  if (src === "**") return ["/:path*"];
+  if (src === "**") return ["/(.*)"]; // Vercel's documented catch-all; "/:path*" skips trailing-slash pages
   if (src === "/*-sitemap.xml") return ["/:file(.+-sitemap\\.xml)"];
   if (src.endsWith("{,/**}")) {
     const base = src.slice(0, -"{,/**}".length);
