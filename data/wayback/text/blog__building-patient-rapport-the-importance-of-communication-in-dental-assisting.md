@@ -1,0 +1,6 @@
+<!-- source: http://web.archive.org/web/20260217105241id_/https://dentalassistantco.com/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting/ -->
+One moment, please...
+
+ Loader
+
+ Please wait while your request is being verified...

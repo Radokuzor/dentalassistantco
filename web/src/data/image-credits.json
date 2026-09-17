@@ -1,0 +1,65 @@
+{
+  "hero-assistant": {
+    "pexelsId": 3952132,
+    "alt": "A dentist and nurse in a clinic working on a patient's dental care with advanced tools.",
+    "photographer": "Andrea Piacquadio",
+    "photographerUrl": "https://www.pexels.com/@olly",
+    "url": "https://www.pexels.com/photo/woman-in-light-blue-scrub-suit-holding-dental-curing-light-3952132/",
+    "width": 5760,
+    "height": 3840
+  },
+  "clinic-team": {
+    "pexelsId": 10711075,
+    "alt": "Group of diverse medical professionals in a clinic, focused on healthcare tasks.",
+    "photographer": "Bilal Izaddin",
+    "photographerUrl": "https://www.pexels.com/@sparkphotopro",
+    "url": "https://www.pexels.com/photo/medical-practitioners-inside-healthcare-facility-10711075/",
+    "width": 5382,
+    "height": 3648
+  },
+  "xray": {
+    "pexelsId": 6502015,
+    "alt": "Female dentist reviewing digital dental x-rays on a computer screen in a clinic setting.",
+    "photographer": "cottonbro studio",
+    "photographerUrl": "https://www.pexels.com/@cottonbro",
+    "url": "https://www.pexels.com/photo/an-x-ray-image-of-a-jawbone-in-the-computer-6502015/",
+    "width": 6349,
+    "height": 4233
+  },
+  "colorado": {
+    "pexelsId": 8473603,
+    "alt": "Moody clouds enveloping the rugged mountains of Colorado Springs, creating a dramatic scenic view.",
+    "photographer": "Jacob Moore",
+    "photographerUrl": "https://www.pexels.com/@jacobmooreimages",
+    "url": "https://www.pexels.com/photo/mountains-forest-rain-cloud-8473603/",
+    "width": 6960,
+    "height": 4640
+  },
+  "blog-xray-rules": {
+    "pexelsId": 6501862,
+    "alt": "Monitor displaying dental X-ray images in a clinic setup for diagnostic purposes.",
+    "photographer": "cottonbro studio",
+    "photographerUrl": "https://www.pexels.com/@cottonbro",
+    "url": "https://www.pexels.com/photo/an-x-ray-image-of-a-jawbone-in-the-computer-6501862/",
+    "width": 6221,
+    "height": 4147
+  },
+  "blog-salary": {
+    "pexelsId": 5622241,
+    "alt": "A dentist performs a check-up on a patient holding a mirror in a modern dental office.",
+    "photographer": "Gustavo Fring",
+    "photographerUrl": "https://www.pexels.com/@gustavo-fring",
+    "url": "https://www.pexels.com/photo/dentist-with-patient-5622241/",
+    "width": 5760,
+    "height": 3840
+  },
+  "blog-cost": {
+    "pexelsId": 771317,
+    "alt": "A young man concentrates on studying at his desk, taking notes indoors.",
+    "photographer": "Min An",
+    "photographerUrl": "https://www.pexels.com/@minan1398",
+    "url": "https://www.pexels.com/photo/man-in-black-shirt-sitting-and-writing-771317/",
+    "width": 4256,
+    "height": 2514
+  }
+}

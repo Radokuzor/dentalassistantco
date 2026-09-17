@@ -1,0 +1,6 @@
+<!-- source: http://web.archive.org/web/20260512183144id_/https://dentalassistantco.com/thank-you/ -->
+One moment, please...
+
+ Loader
+
+ Please wait while your request is being verified...

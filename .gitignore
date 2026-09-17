@@ -1,0 +1,11 @@
+# Secrets - never commit
+*firebase-adminsdk*.json
+.env
+.env.*
+!.env.example
+node_modules/
+.firebase/
+dist/
+.next/
+out/
+functions/lib/

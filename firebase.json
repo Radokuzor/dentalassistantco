@@ -1,0 +1,362 @@
+{
+  "hosting": {
+    "public": "web/out",
+    "cleanUrls": true,
+    "trailingSlash": true,
+    "ignore": [
+      "firebase.json",
+      "**/.*"
+    ],
+    "redirects": [
+      {
+        "source": "/programs/edda-test{,/**}",
+        "destination": "/programs/expanded-duties-dental-assistant/",
+        "type": 301
+      },
+      {
+        "source": "/job-search{,/**}",
+        "destination": "/jobs/",
+        "type": 301
+      },
+      {
+        "source": "/apply-online{,/**}",
+        "destination": "/find-a-program/",
+        "type": 301
+      },
+      {
+        "source": "/book-tour{,/**}",
+        "destination": "/find-a-program/",
+        "type": 301
+      },
+      {
+        "source": "/lp{,/**}",
+        "destination": "/find-a-program/",
+        "type": 301
+      },
+      {
+        "source": "/why-choose-aida{,/**}",
+        "destination": "/programs/dental-assistant/",
+        "type": 301
+      },
+      {
+        "source": "/live-patient-clinics{,/**}",
+        "destination": "/programs/dental-assistant/",
+        "type": 301
+      },
+      {
+        "source": "/student-testimonials{,/**}",
+        "destination": "/programs/dental-assistant/",
+        "type": 301
+      },
+      {
+        "source": "/testimonials{,/**}",
+        "destination": "/programs/dental-assistant/",
+        "type": 301
+      },
+      {
+        "source": "/employer-testimonials{,/**}",
+        "destination": "/hire/",
+        "type": 301
+      },
+      {
+        "source": "/about-us/dental-assistant-instructors{,/**}",
+        "destination": "/about-us/",
+        "type": 301
+      },
+      {
+        "source": "/student-services{,/**}",
+        "destination": "/resources/",
+        "type": 301
+      },
+      {
+        "source": "/video-tutorials{,/**}",
+        "destination": "/resources/",
+        "type": 301
+      },
+      {
+        "source": "/thank-you{,-apply-online,-book-tour,-contact-us}{,/**}",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/locations/mesa-arizona-3{,/**}",
+        "destination": "/",
+        "type": 301
+      },
+      {
+        "source": "/student-refund-policy{,/**}",
+        "destination": "/about-us/",
+        "type": 301
+      },
+      {
+        "source": "/transcriptdiplomacertificate-financial-hold-exemption-policy{,/**}",
+        "destination": "/about-us/",
+        "type": 301
+      },
+      {
+        "source": "/feed{,/**}",
+        "destination": "/feed.xml",
+        "type": 301
+      },
+      {
+        "source": "/sitemap_index.xml",
+        "destination": "/sitemap.xml",
+        "type": 301
+      },
+      {
+        "source": "/*-sitemap.xml",
+        "destination": "/sitemap.xml",
+        "type": 301
+      },
+      {
+        "source": "/blog/category/**",
+        "destination": "/blog/",
+        "type": 301
+      },
+      {
+        "source": "/blog/author/**",
+        "destination": "/blog/",
+        "type": 301
+      },
+      {
+        "source": "/blog/3-reasons-new-dental-assistant-needs-pursue-continuing-education{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/5-reasons-love-dental-assisting{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/a-day-in-the-life-of-a-dental-assistant-what-to-expect{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/additional-responsibilities-edda{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/become-dental-assistant-colorado-without-going-school{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/can-become-dental-assistant-online{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/choose-dental-assisting-school-thats-right{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/considering-dental-assistant-career{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/danb-certification-required-colorado{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/dental-assistant-demand-colorado{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/dental-assistant-perfect-starting-point{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/dental-assistants-critical-successful-dental-practice{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/dental-assisting-school-hard{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/dental-assisting-vs-medical-assisting-career-path{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/difference-dental-assistant-expanded-duties-dental-assistant{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/eco-friendly-practices-how-dental-assistants-can-contribute{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/highest-paying-dental-assistant-job{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/how-long-does-it-take-to-become-a-dental-assistant{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/how-to-balance-work-family-and-dental-assisting-school{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/importance-continuing-education-dental-assistants{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/important-hands-dental-assistant-training{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/innovative-dental-technologies-dental-assistant{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/live-patient-clinic-advantages-dental-assisting-education{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/skills-gain-dental-assistant-training{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/the-difference-between-dental-assistant-and-dental-hygienist-careers{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/the-growing-demand-for-dental-assistants-in-colorado{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/the-role-of-dental-assistants-in-community-health-programs{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/tips-getting-hired-dental-assistant{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/top-4-dental-assisting-myths-debunked{,/}",
+        "destination": "/blog/",
+        "type": 302
+      },
+      {
+        "source": "/blog/understanding-the-role-of-expanded-duties-dental-assistants-edda{,/}",
+        "destination": "/blog/",
+        "type": 302
+      }
+    ],
+    "rewrites": [
+      {
+        "source": "/api/collect{,/}",
+        "function": {
+          "functionId": "collect",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/api/lead{,/}",
+        "function": {
+          "functionId": "lead",
+          "region": "us-central1"
+        }
+      }
+    ],
+    "headers": [
+      {
+        "source": "/_next/static/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=31536000, immutable"
+          }
+        ]
+      },
+      {
+        "source": "/images/**",
+        "headers": [
+          {
+            "key": "Cache-Control",
+            "value": "public, max-age=2592000"
+          }
+        ]
+      },
+      {
+        "source": "**",
+        "headers": [
+          {
+            "key": "X-Content-Type-Options",
+            "value": "nosniff"
+          },
+          {
+            "key": "Referrer-Policy",
+            "value": "strict-origin-when-cross-origin"
+          },
+          {
+            "key": "X-Frame-Options",
+            "value": "SAMEORIGIN"
+          },
+          {
+            "key": "Permissions-Policy",
+            "value": "camera=(), microphone=(), geolocation=()"
+          }
+        ]
+      }
+    ]
+  },
+  "functions": [
+    {
+      "source": "functions",
+      "codebase": "default",
+      "predeploy": [
+        "npm --prefix \"$RESOURCE_DIR\" run build"
+      ]
+    }
+  ],
+  "firestore": {
+    "rules": "firestore.rules",
+    "indexes": "firestore.indexes.json"
+  },
+  "emulators": {
+    "functions": {
+      "port": 5001
+    },
+    "firestore": {
+      "port": 8080
+    },
+    "hosting": {
+      "port": 5000
+    },
+    "ui": {
+      "enabled": true
+    }
+  }
+}

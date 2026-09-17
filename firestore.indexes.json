@@ -1,0 +1,7 @@
+{
+  "indexes": [],
+  "fieldOverrides": [
+    { "collectionGroup": "events", "fieldPath": "params", "indexes": [] },
+    { "collectionGroup": "events", "fieldPath": "attribution", "indexes": [] }
+  ]
+}
