@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Phone } from "lucide-react";
-import { nav, site } from "@/lib/site";
+import { site } from "@/lib/site";
+import { NavLinks } from "./NavLinks";
 
 export function Header() {
   return (
@@ -10,13 +11,7 @@ export function Header() {
           DentalAssistant
           <span className="rounded bg-teal px-1.5 py-0.5 text-sm font-bold tracking-widest text-paper">CO</span>
         </Link>
-        <nav className="hidden items-center gap-6 text-sm font-medium text-ink-soft md:flex">
-          {nav.slice(1).map((item) => (
-            <Link key={item.href} href={item.href} className="transition hover:text-teal">
-              {item.label}
-            </Link>
-          ))}
-        </nav>
+        <NavLinks />
         <div className="flex items-center gap-3">
           <a href={site.phoneHref} className="hidden items-center gap-1.5 text-sm font-semibold lg:flex">
             <Phone className="size-4 text-teal" aria-hidden /> {site.phone}
