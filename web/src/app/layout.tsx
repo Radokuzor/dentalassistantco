@@ -26,7 +26,7 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body className={`${fraunces.variable} ${figtree.variable} pb-14 md:pb-0`}>
+      <body className={`${fraunces.variable} ${figtree.variable} pb-16 md:pb-0`}>
         <JsonLd
           data={{
             "@context": "https://schema.org",

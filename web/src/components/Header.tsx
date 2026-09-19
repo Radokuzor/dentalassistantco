@@ -5,7 +5,7 @@ import { NavLinks } from "./NavLinks";
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-40 border-b border-line/80 bg-paper/85 backdrop-blur" data-section="header">
+    <header className="relative z-40 border-b border-line/80 bg-paper" data-section="header">
       <div className="mx-auto flex h-16 max-w-6xl items-center justify-between gap-6 px-4 sm:px-6">
         <Link href="/" className="flex items-baseline gap-1 font-display text-xl font-semibold tracking-tight">
           DentalAssistant
