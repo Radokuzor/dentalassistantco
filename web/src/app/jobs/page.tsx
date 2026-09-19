@@ -25,47 +25,26 @@ export default function Jobs() {
         crumbs={[{ href: "/jobs/", label: "Jobs" }]}
       />
       <div className="mx-auto max-w-4xl px-4 py-12 sm:px-6">
-        {open.length > 0 ? (
-          <>
-            <JsonLd
-              data={{
-                "@context": "https://schema.org",
-                "@type": "ItemList",
-                name: "Dental assistant jobs in Colorado",
-                numberOfItems: open.length,
-                itemListElement: open.map((j, i) => ({
-                  "@type": "ListItem",
-                  position: i + 1,
-                  url: `${site.url}/jobs/${j.slug}/`,
-                  name: `${j.title} — ${j.employer}, ${j.city}`,
-                })),
-              }}
-            />
-            <JobBoard jobs={open} />
-          </>
-        ) : (
-          <div className="rounded-3xl border border-dashed border-line bg-white p-8 text-center sm:p-10" data-section="jobs_empty">
-            <h2 className="font-display text-2xl">The board is filling up now</h2>
-            <p className="mx-auto mt-3 max-w-lg leading-relaxed text-ink-soft">
-              We only publish openings a Colorado practice has sent us directly, so the board starts empty rather than
-              scraped and stale. Join the talent pool below and you&apos;ll hear about the first roles before they&apos;re
-              anywhere else — and if you run an office, your posting is free while we launch.
-            </p>
-            <div className="mt-6 flex flex-wrap justify-center gap-3">
-              <Link
-                href="#talent-pool"
-                data-track="cta"
-                data-track-id="jobs_empty_pool"
-                className="rounded-full bg-coral px-6 py-3 font-semibold text-white"
-              >
-                Get the first openings
-              </Link>
-              <Link href="/hire/" data-track="cta" data-track-id="jobs_empty_hire" className="rounded-full border border-line bg-white px-6 py-3 font-semibold">
-                Post a job free
-              </Link>
-            </div>
-          </div>
+        {open.length > 0 && (
+          <JsonLd
+            data={{
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              name: "Dental assistant jobs in Colorado",
+              numberOfItems: open.length,
+              itemListElement: open.map((j, i) => ({
+                "@type": "ListItem",
+                position: i + 1,
+                url: `${site.url}/jobs/${j.slug}/`,
+                name: `${j.title} — ${j.employer}, ${j.city}`,
+              })),
+            }}
+          />
         )}
+        {/* JobBoard also fetches the live Firestore feed on mount, so a job published from /admin/
+            appears here within seconds — it just won't have JobPosting schema until the next
+            npm run jobs:sync + rebuild bakes it into a static /jobs/<slug>/ page. */}
+        <JobBoard initialJobs={open} />
 
         <section id="talent-pool" className="mt-14 scroll-mt-24">
           <h2 className="font-display text-2xl">Join the Colorado talent pool</h2>

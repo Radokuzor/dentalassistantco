@@ -52,7 +52,8 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 | `scripts/import-jobs.mjs`, `scripts/job-sources.json` | `npm run jobs:import`: pulls Colorado dental assistant roles from USAJOBS + employer-published Lever/Greenhouse boards into `jobs.json`. **Never add Indeed/ZipRecruiter/LinkedIn** |
 | `scripts/sync-jobs.mjs` | `npm run jobs:sync`: approved `dac_jobs` in Firestore → `web/src/data/jobs.json` (then rebuild + deploy) |
 | `functions/` | Cloud Functions: `collect` (analytics), `lead` (forms), `onLeadCreated` (Telegram), `dailyDigest`, `weeklyDigest` |
-| `web/src/app/admin/`, `web/src/components/admin/`, `functions/src/admin.ts` | Password-protected analytics dashboard (/admin/). Password = `ADMIN_PASSWORD` secret; the admin function aggregates `dac_events`/`dac_leads` |
+| `web/src/app/admin/`, `web/src/components/admin/`, `functions/src/admin.ts` | Password-protected dashboard (/admin/), tabbed: Analytics (`AdminDashboard`, aggregates `dac_events`/`dac_leads`) and Job board (`AdminJobs`). Password = `ADMIN_PASSWORD` secret, shared by both tabs |
+| `functions/src/jobs.ts` | `adminJobs` (password-gated create/update/close/reopen/delete/list on `dac_jobs`) and `jobsFeed` (public GET of live listings). Publishing here goes live on `/jobs/` within seconds — `JobBoard` fetches `jobsFeed` at runtime and merges it with the static list, no rebuild needed |
 | `scripts/analytics-report.mjs` | `npm run report`: Firestore analytics → `data/analytics/` (gitignored) |
 | `scripts/build-firebase-json.mjs` | Generates `firebase.json` (redirect map); runs before every web build |
 
@@ -116,3 +117,19 @@ Facts gathered 2026-09-17 (re-verify before publishing):
   Lever board 404s). Federal DA roles at Evans Army Community Hospital/Fort Carson are real but open for about a week at
   a time. The ~200+ live Colorado DA jobs are on Indeed/ZipRecruiter/practice sites, which we will not ingest. Use the
   importer for freshness and credibility; fill the board through `/hire/` outreach.
+- 2026-09-19: **Admin can publish jobs directly, live within seconds.** New `/admin/` "Job board" tab
+  (`AdminJobs.tsx`) posts to `functions/src/jobs.ts`'s `adminJobs` (password-gated: create, update,
+  close, reopen, delete, list), which writes straight to `dac_jobs` in Firestore — that's the
+  persistence. A public, unauthenticated `jobsFeed` function reads back everything `status:
+  "approved"` and not yet past `validThrough`. `JobBoard` (`/jobs/`) fetches that feed at runtime and
+  merges it with whatever was baked in at the last build, so a job you publish shows up on the live
+  site within seconds — no redeploy required. A job that only exists in the live feed (not yet in a
+  build) doesn't have a static `/jobs/<slug>/` page yet, so its card expands in place instead of
+  linking out; `JobDetails.tsx` was factored out of the old `/jobs/[slug]/` page so both the static
+  page and the inline expand render the identical facts/apply-form UI. Running `npm run jobs:sync` +
+  rebuild later upgrades a live-only job into a real static page with `JobPosting` schema — worth
+  doing for Google for Jobs, not required to be live or appliable-to.
+  Applications still land as `job_application` leads; `onLeadCreated` looks up `forwardTo` on the
+  `dac_jobs` doc for the Telegram alert. **No automatic email-to-employer yet** — forwarding the
+  application from the Telegram alert is still a manual step until an email provider (Resend/
+  SendGrid) is wired in.

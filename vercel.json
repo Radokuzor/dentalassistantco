@@ -359,6 +359,14 @@
     {
       "source": "/api/admin{/}?",
       "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/admin"
+    },
+    {
+      "source": "/api/admin-jobs{/}?",
+      "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/adminJobs"
+    },
+    {
+      "source": "/api/jobs-feed{/}?",
+      "destination": "https://us-central1-take-shots-f1a99.cloudfunctions.net/jobsFeed"
     }
   ],
   "headers": [

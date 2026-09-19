@@ -265,6 +265,20 @@
           "functionId": "admin",
           "region": "us-central1"
         }
+      },
+      {
+        "source": "/api/admin-jobs{,/}",
+        "function": {
+          "functionId": "adminJobs",
+          "region": "us-central1"
+        }
+      },
+      {
+        "source": "/api/jobs-feed{,/}",
+        "function": {
+          "functionId": "jobsFeed",
+          "region": "us-central1"
+        }
       }
     ],
     "headers": [

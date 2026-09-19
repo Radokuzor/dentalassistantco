@@ -385,3 +385,4 @@ export const weeklyDigest = onSchedule(
 );
 
 export { admin } from "./admin";
+export { adminJobs, jobsFeed } from "./jobs";
