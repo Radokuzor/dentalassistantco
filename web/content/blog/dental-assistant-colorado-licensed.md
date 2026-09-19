@@ -27,13 +27,13 @@ So on a normal day, a Colorado assistant is seating patients, turning over rooms
 
 ## The exception: x-rays
 
-Radiography is the one area where Colorado draws a hard line. Before you expose a patient, you have to qualify through one of the routes the state accepts. [DANB's summary of the Colorado rule](https://www.danb.org/state-requirements/colorado-radiography) lists them:
+Radiography is the one area where Colorado draws a hard line. Before you expose a patient, you have to qualify through one of the routes the state accepts. [DANB's summary of the Colorado rule](/resources/#danb-colorado) lists them:
 
 - passing DANB's Radiation Health and Safety (RHS) exam, or the full Certified Dental Assistant (CDA) exam, which includes RHS
 - finishing a radiography module approved by the Colorado Dental Board and taught by a licensed dentist or hygienist
 - finishing the radiography course in an accredited dental assisting program that meets Colorado's content and clinical-hour requirements
 
-This is the question to ask every school you're considering: is x-ray training included, and does it satisfy Colorado's rule? Some programs build it into tuition and some charge for it separately. An assistant who can't take x-rays is a lot less useful to a busy office. The rules do get revised, so check the [Colorado Dental Board](https://dpo.colorado.gov/Dental) before you pay anyone.
+This is the question to ask every school you're considering: is x-ray training included, and does it satisfy Colorado's rule? Some programs build it into tuition and some charge for it separately. An assistant who can't take x-rays is a lot less useful to a busy office. The rules do get revised, so check the [Colorado Dental Board](/resources/#dental-board) before you pay anyone.
 
 ## If there's no license, why bother with training?
 

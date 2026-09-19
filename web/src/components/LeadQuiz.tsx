@@ -5,10 +5,10 @@ import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { getAttribution, getIds, track } from "@/lib/analytics";
+import { QUIZ_CONSENT } from "@/lib/consent";
 import { cn } from "@/lib/cn";
 
-export const CONSENT_TEXT =
-  "By checking this box, I agree that DentalAssistantCO and the partner schools and employers listed on the Partners page may contact me about dental assistant programs and jobs by phone, text message (including autodialed or prerecorded calls/texts) and email at the number and address I provided. Consent is not a condition of any purchase or enrollment. Message and data rates may apply. Reply STOP to opt out.";
+const CONSENT_TEXT = QUIZ_CONSENT;
 
 type Step = { id: string; question: string; options: string[] };
 

@@ -49,6 +49,9 @@ Firebase Hosting can't return HTTP 410, so retired URLs either 301 to the closes
 | `/blog/category/**`, `/blog/author/**` | 301 | `/blog/` |
 | `/wp-admin/`, `/wp-login.php`, `/wp-content/**`, `/wp-json/**` | 404 | — (bot noise) |
 | New: `/find-a-program/`, `/jobs/`, `/hire/`, `/resources/`, `/partners/`, `/terms/`, `/thanks/*` (noindex) | new | — |
+| New: `/schools/<slug>/` (one profile per Colorado program, the internal destination for every school mention) | new | — |
+| New: `/jobs/<slug>/` (one page per live opening, `JobPosting` schema); `/jobs/none-open/` is a noindex placeholder | new | — |
+| `/schools/` | 301 | `/programs/dental-assistant/` (the comparison page is the hub; only `/schools/<slug>/` is real) |
 | New: `/requirements/`, `/locations/denver/` (Princess Dental Staffing backlink target), `/former-aida-students/` (CDHE-backlink visitors), `/editorial-policy/`, `/advertising-disclosure/`, `/accessibility/` | new | — |
 
 ## Keyword clusters (priority order)

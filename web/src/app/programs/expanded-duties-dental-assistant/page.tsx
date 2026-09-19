@@ -37,13 +37,13 @@ export default function Edda() {
         </p>
         <p>
           Because the rules change, always check the current{" "}
-          <a href="https://dpo.colorado.gov/Dental" rel="noopener" target="_blank">
+          <Link href="/resources/#dental-board">
             Colorado Dental Board rules
-          </a>{" "}
+          </Link>{" "}
           and{" "}
-          <a href="https://www.danb.org/state-requirements/colorado-radiography" rel="noopener" target="_blank">
+          <Link href="/resources/#danb-colorado">
             DANB&apos;s Colorado page
-          </a>{" "}
+          </Link>{" "}
           before taking a course that promises a specific expanded-duty credential.
         </p>
         <h2>How to grow into expanded duties</h2>

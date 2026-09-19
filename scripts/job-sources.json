@@ -1,0 +1,22 @@
+{
+  "_comment": [
+    "Feeds the importer (npm run jobs:import). Only sources that permit republication belong here:",
+    "USAJOBS is public domain, and Lever/Greenhouse board APIs are published by the employer for syndication.",
+    "Never add Indeed, ZipRecruiter or LinkedIn - their terms forbid it, they block it, and Google dedupes",
+    "aggregated copies against the original so the pages would not rank anyway.",
+    "Verified 2026-09-18: dental practices are mostly small businesses and are rarely on Lever/Greenhouse,",
+    "so expect a trickle. Probe a new slug with https://api.lever.co/v0/postings/<slug>?mode=json before adding it."
+  ],
+  "titleMatch": "dental assistant|dental asst|expanded duties|EDDA|dental technician",
+  "usajobs": {
+    "enabled": true,
+    "keyword": "dental assistant",
+    "locations": ["Colorado"],
+    "jobCategoryCode": "0681",
+    "note": "0681 is the federal Dental Assistant occupational series. Needs USAJOBS_API_KEY and USAJOBS_EMAIL in .env (free key from developer.usajobs.gov). Federal roles must be applied for on USAJOBS, so the importer sets `official` on them."
+  },
+  "lever": [
+    { "slug": "coloradocoalition", "name": "Colorado Coalition for the Homeless", "verified": "2026-09-18" }
+  ],
+  "greenhouse": []
+}

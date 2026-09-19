@@ -82,9 +82,9 @@ export default function Requirements() {
             <tr>
               <th>Who regulates the tasks</th>
               <td>
-                <a href="https://dpo.colorado.gov/Dental" target="_blank" rel="noopener">
+                <Link href="/resources/#dental-board">
                   Colorado Dental Board (DORA)
-                </a>
+                </Link>
               </td>
             </tr>
           </tbody>
@@ -103,9 +103,9 @@ export default function Requirements() {
         <p>
           Before you expose a patient to x-rays in Colorado, you need one of the state&apos;s accepted radiography
           qualifications. According to{" "}
-          <a href="https://www.danb.org/state-requirements/colorado-radiography" target="_blank" rel="noopener">
+          <Link href="/resources/#danb-colorado">
             DANB&apos;s Colorado summary
-          </a>
+          </Link>
           , the routes include:
         </p>
         <ul>
@@ -135,9 +135,9 @@ export default function Requirements() {
         <h2>Checking a school</h2>
         <p>
           Private occupational schools in Colorado must be approved by the{" "}
-          <a href="https://cdhe.colorado.gov/" target="_blank" rel="noopener">
+          <Link href="/resources/#cdhe">
             Colorado Department of Higher Education
-          </a>{" "}
+          </Link>{" "}
           (Division of Private Occupational Schools). Ask any school for its approval status, and read{" "}
           <Link href="/blog/choose-dental-assisting-school-thats-right/">how to choose a dental assisting school</Link>.
         </p>

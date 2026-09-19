@@ -29,11 +29,11 @@ To take x-rays in Colorado, you need qualifying radiography training (or a quali
 
 ## Hybrid programs
 
-Some Colorado schools already work this way. The [Academy for Dental Assisting Careers](https://www.academyfordentalassistingcareers.com/), with locations in Longmont and Greeley, advertises online coursework combined with hands-on sessions held in working dental offices. Career colleges often blend online and campus classes as well. Each school's format is on our [programs comparison](/programs/dental-assistant/).
+Some Colorado schools already work this way. The [Academy for Dental Assisting Careers](/schools/academy-for-dental-assisting-careers/), with locations in Longmont and Greeley, advertises online coursework combined with hands-on sessions held in working dental offices. Career colleges often blend online and campus classes as well. Each school's format is on our [programs comparison](/programs/dental-assistant/).
 
 ## When to walk away
 
-Be skeptical if a program has no hands-on component and no externship, or if it promises you'll be "certified" without saying by whom. DANB exams are separate from any school. Also be wary if it never mentions Colorado's radiography rule, can't tell you whether it's approved by the [Colorado Department of Higher Education](https://cdhe.colorado.gov/), or pushes you to pay today before a deadline that seems to keep moving.
+Be skeptical if a program has no hands-on component and no externship, or if it promises you'll be "certified" without saying by whom. DANB exams are separate from any school. Also be wary if it never mentions Colorado's radiography rule, can't tell you whether it's approved by the [Colorado Department of Higher Education](/resources/#cdhe), or pushes you to pay today before a deadline that seems to keep moving.
 
 ## Where online learning really helps
 

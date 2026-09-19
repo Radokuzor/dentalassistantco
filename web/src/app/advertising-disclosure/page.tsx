@@ -58,9 +58,9 @@ export default function AdvertisingDisclosure() {
 
         <p>
           Reference:{" "}
-          <a href="https://www.ftc.gov/business-guidance/resources/ftcs-endorsement-guides-what-people-are-asking" target="_blank" rel="noopener">
+          <Link href="/resources/#ftc-endorsements">
             FTC Endorsement Guides: What People Are Asking
-          </a>
+          </Link>
           . Last updated September 17, 2026.
         </p>
       </Prose>

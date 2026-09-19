@@ -42,6 +42,11 @@
       "permanent": true
     },
     {
+      "source": "/schools{/}?",
+      "destination": "/programs/dental-assistant/",
+      "permanent": true
+    },
+    {
       "source": "/apply-online{/}?",
       "destination": "/find-a-program/",
       "permanent": true

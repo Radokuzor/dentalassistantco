@@ -29,7 +29,7 @@ Exactly which procedures are allowed is up to each state. Some limit coronal pol
 
 Colorado doesn't issue permits or licenses to dental assistants of any kind, expanded or otherwise. Instead, the Dental Practice Act and the Colorado Dental Board's rules spell out which tasks a dentist may delegate, how much supervision is required and, for some tasks, what training has to come first. Radiography is the best-known example.
 
-In practice, a Colorado assistant's "expanded" role depends on two things: what the rules allow, and what your dentist is willing to delegate after watching your work. That has an upside and a downside. You don't need to chase a state credential. But if a course advertises a "Colorado EDDA certification," be careful. Before paying for it, read the current rules on the [Dental Board's site](https://dpo.colorado.gov/Dental) and ask the course provider exactly which rule its training satisfies.
+In practice, a Colorado assistant's "expanded" role depends on two things: what the rules allow, and what your dentist is willing to delegate after watching your work. That has an upside and a downside. You don't need to chase a state credential. But if a course advertises a "Colorado EDDA certification," be careful. Before paying for it, read the current rules on the [Dental Board's site](/resources/#dental-board) and ask the course provider exactly which rule its training satisfies.
 
 ## Getting there
 
@@ -41,7 +41,7 @@ Once you're taking on more of the work, it's reasonable to ask to be paid for it
 
 ## If you leave Colorado
 
-Pennsylvania and Ohio have formal EFDA credentials, and California has the RDAEF. Each requires specific education and exams. Your Colorado experience will help, but it won't transfer automatically, so check the new state's dental board and [DANB's state pages](https://www.danb.org/) before you move.
+Pennsylvania and Ohio have formal EFDA credentials, and California has the RDAEF. Each requires specific education and exams. Your Colorado experience will help, but it won't transfer automatically, so check the new state's dental board and [DANB's state pages](/resources/#danb) before you move.
 
 For an overview of the career path, see our [EDDA page](/programs/expanded-duties-dental-assistant/).
 

@@ -79,7 +79,8 @@ export default async function PostPage({ params }: Props) {
         <figure className="mx-auto mt-6 max-w-3xl px-4 sm:px-6">
           <Image src={`/images/${post.image}.jpg`} alt={post.imageAlt ?? credit.alt} width={credit.width} height={credit.height} className="aspect-[16/9] w-full rounded-3xl object-cover" priority />
           <figcaption className="mt-2 text-xs text-ink-soft">
-            Photo: <a href={credit.url} rel="noopener" target="_blank">{credit.photographer} / Pexels</a>
+            {/* Credit as text, not a link: Pexels doesn't require attribution, and page bodies stay internal. */}
+            Photo: {credit.photographer} / Pexels
           </figcaption>
         </figure>
       )}

@@ -47,4 +47,4 @@ School also makes sense if you're leaving another career and can't afford months
 
 On-the-job training is a good route if you already know someone in dentistry. If you're starting cold, a short program is usually faster, even though it costs money up front. You can compare options on our [Colorado programs page](/programs/dental-assistant/) or browse [entry-level openings](/jobs/) to see what offices are asking for.
 
-*Checked September 17, 2026. Confirm current rules with the [Colorado Dental Board](https://dpo.colorado.gov/Dental).*
+*Checked September 17, 2026. Confirm current rules with the [Colorado Dental Board](/resources/#dental-board).*

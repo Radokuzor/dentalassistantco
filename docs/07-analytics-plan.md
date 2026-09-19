@@ -39,7 +39,11 @@ for the cookieless first-party page-view ping, which stores no personal data.
 | `quiz_start` / `quiz_step` / `quiz_abandon` | step, answer | Find-a-Program quiz |
 | `form_start` / `form_error` / `generate_lead` | form_id, field, error | Lead, contact, and employer forms |
 | `story_submit` | form_id | Graduate/employer story form on `/stories/` |
-| `job_view` / `job_apply_click` / `job_post_submit` | job_id, employer | Job board |
+| `job_open` / `job_search` / `job_filter` | job, employer, query, field, value, results | Job board browsing (`/jobs/`) |
+| `job_application_submit` | job, jobSlug, employer, city | On-site application on `/jobs/<slug>/` |
+| `talent_pool_join` | form_id | Talent-pool profile on `/jobs/#talent-pool` |
+| `job_post_submit` | form_id | Employer posting an opening on `/hire/` |
+| `school_card` / `school_row` click | data-track-id = school slug | Any school card or table row (heatmap `click` event) |
 | `newsletter_signup` | location | Email capture |
 | `purchase_click` | product | Stripe checkout button |
 | `search` | term | Site search |
@@ -49,7 +53,7 @@ for the cookieless first-party page-view ping, which stores no personal data.
 | `click` | x_pct, y, doc_h, vw, section, tag, label, interactive | Every click (heatmaps; `interactive:false` = dead click) |
 | `rage_click` | selector | 3+ clicks within 600 ms |
 
-**GA4 key events (conversions):** `generate_lead`, `phone_click`, `job_post_submit`, `purchase_click`, `newsletter_signup`, `affiliate_click`.
+**GA4 key events (conversions):** `generate_lead` (quiz + school inquiries), `job_application_submit`, `talent_pool_join`, `phone_click`, `job_post_submit`, `purchase_click`, `newsletter_signup`, `affiliate_click`.
 
 ## Telegram notifications
 | Trigger | Message |
@@ -57,6 +61,9 @@ for the cookieless first-party page-view ping, which stores no personal data.
 | New lead (`leads` doc created) | Name, phone, email, quiz answers, landing page, source/UTM, device |
 | New contact message | Name, contact, message |
 | New job post / employer request | Office, city, role |
+| New school inquiry (`school_inquiry`) | Which school, the visitor question, contact details, consent |
+| New job application (`job_application`) | Which job and employer, experience, x-ray credential, contact details |
+| New talent-pool profile (`talent_pool`) | City, experience, availability, contact details |
 | Daily 8:00 AM Mountain Time | Yesterday's sessions, visitors, top 5 pages, top 5 sources, leads, quiz funnel (start → step → submit), phone clicks, 404s |
 | Weekly (Monday) | Week-over-week trends, best-converting pages, pages with high exits |
 

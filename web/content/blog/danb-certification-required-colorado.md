@@ -33,11 +33,11 @@ DANB has a lot of acronyms. These are the ones you'll run into:
 | NELDA | RHS, ICE and AMP together; an entry-level credential |
 | CDA (Certified Dental Assistant) | RHS, ICE and General Chairside; DANB's main certification, with eligibility rules |
 
-Fees and eligibility pathways change, so check [danb.org](https://www.danb.org/) for current numbers instead of trusting a blog post, including this one.
+Fees and eligibility pathways change, so check [danb.org](/resources/#danb) for current numbers instead of trusting a blog post, including this one.
 
 ## Where RHS comes in
 
-Before you take x-rays on a patient in Colorado, you need to qualify through an accepted route. According to [DANB's Colorado page](https://www.danb.org/state-requirements/colorado-radiography), you can pass RHS (or the full CDA), complete a radiography module approved by the Colorado Dental Board, or complete the radiography course in an accredited program.
+Before you take x-rays on a patient in Colorado, you need to qualify through an accepted route. According to [DANB's Colorado page](/resources/#danb-colorado), you can pass RHS (or the full CDA), complete a radiography module approved by the Colorado Dental Board, or complete the radiography course in an accredited program.
 
 Many Colorado schools include the Board-approved module in tuition, which takes care of it. If yours doesn't, or you were trained on the job, sitting for RHS is the usual workaround. Our [requirements page](/requirements/) covers the rest of the state rules.
 

@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, Prose } from "@/components/PageHero";
+import { SchoolGrid } from "@/components/SchoolCard";
 import { programs } from "@/data/programs";
 
 export const metadata: Metadata = {
@@ -22,14 +23,7 @@ export default function ColoradoSprings() {
       />
       <Prose>
         <h2>Training programs in Colorado Springs</h2>
-        <ul>
-          {local.map((p) => (
-            <li key={p.school}>
-              <strong>{p.school}</strong>: {p.length !== "See school" ? `${p.length}, ` : ""}
-              {p.schedule}, {p.tuition}
-            </li>
-          ))}
-        </ul>
+        <SchoolGrid programs={local} />
         <p>
           Pikes Peak State College also offers healthcare programs. Check its current catalog for dental options. See the{" "}
           <Link href="/programs/dental-assistant/">full Colorado comparison</Link>.

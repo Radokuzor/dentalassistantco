@@ -33,9 +33,7 @@ export default function Programs() {
             {programs.map((p) => (
               <tr key={p.school}>
                 <td>
-                  <a href={p.url} rel="nofollow noopener" target="_blank">
-                    {p.school}
-                  </a>
+                  <Link href={`/schools/${p.slug}/`}>{p.school}</Link>
                 </td>
                 <td>{p.cities.join(", ")}</td>
                 <td>{p.length}</td>
@@ -46,7 +44,11 @@ export default function Programs() {
           </tbody>
         </table>
         <p>
-          <small>*As published on each school&apos;s website, checked September 17, 2026. Listing a school doesn&apos;t mean we partner with it.</small>
+          <small>
+            *As published on each school&apos;s website, checked September 17, 2026. Listing a school doesn&apos;t mean we partner
+            with it. Every school name above opens its profile here on DentalAssistantCO, where you can see the details and ask
+            the school a question without leaving the site.
+          </small>
         </p>
 
         <p>

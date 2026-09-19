@@ -18,6 +18,16 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 5. **Shared Firebase project.** `take-shots-f1a99` also runs another app (Firestore `games`, `shot_content`, with its own rules). Only deploy `--only hosting,functions`, prefix our collections with `dac_`, and never add a `firestore` key to firebase.json.
 6. **Compliance:** TCPA consent on lead forms, an FTC affiliate disclosure, and a privacy policy (Colorado Privacy Act).
    Cite primary sources for any regulatory claim.
+7. **Keep the visitor on the site.** Never link out to a school, employer, ATS or competing job board. Schools get an
+   on-site profile at `/schools/<slug>/` with our own inquiry form; jobs are applied to at `/jobs/<slug>/`.
+   `Program.url` exists for our re-verification and must never be rendered as a link.
+   **Outbound links exist in exactly two places:** the footer "Official sources" strip and the `/resources/` hub. Every
+   external URL is registered in `web/src/data/sources.ts`; page and post bodies cite a source by linking to
+   `/resources/#<id>`, never to the source itself. Photo credits are plain text. Any new external link goes in
+   `sources.ts` first — if it doesn't belong there, it doesn't belong on the site.
+   **One narrow exception:** a job with `official` set (federal or state roles, where the employer's own application is
+   legally mandatory) renders a labelled outbound panel. Without it we would be collecting applications that cannot get
+   anyone hired. Never set `official` on a private-employer listing just to link out.
 
 ## Map of the repo
 | Path | Contents |
@@ -35,6 +45,12 @@ hub that makes money from school lead gen, a job board and talent pool, affiliat
 | `data/backlinks.md` | Known referring domains and citations, with actions |
 | `scripts/fetch-wayback.mjs`, `scripts/repair-wayback.mjs` | Re-runnable archivers (skip files that already exist). **Don't re-pull unless needed.** |
 | `web/` | Next.js static site (App Router, Tailwind v4). `web/content/blog/*.md` = posts, `web/src/data/` = programs, jobs, partners, image credits |
+| `web/src/app/schools/[slug]/` | On-site school profiles (facts, format explainer, questions, per-school inquiry form). Data: `web/src/data/programs.ts` |
+| `web/src/app/jobs/`, `web/src/components/JobBoard.tsx` | Job board with filters, `JobPosting` schema, on-site applications, talent pool. Data: `web/src/data/jobs.json` |
+| `web/src/data/sources.ts` | Registry of every external URL. Rendered only by the footer strip and `/resources/`; bodies link to `/resources/#<id>` |
+| `web/src/lib/consent.ts` | Exact TCPA wording for every form. School and job forms name the single organization the lead goes to |
+| `scripts/import-jobs.mjs`, `scripts/job-sources.json` | `npm run jobs:import`: pulls Colorado dental assistant roles from USAJOBS + employer-published Lever/Greenhouse boards into `jobs.json`. **Never add Indeed/ZipRecruiter/LinkedIn** |
+| `scripts/sync-jobs.mjs` | `npm run jobs:sync`: approved `dac_jobs` in Firestore → `web/src/data/jobs.json` (then rebuild + deploy) |
 | `functions/` | Cloud Functions: `collect` (analytics), `lead` (forms), `onLeadCreated` (Telegram), `dailyDigest`, `weeklyDigest` |
 | `web/src/app/admin/`, `web/src/components/admin/`, `functions/src/admin.ts` | Password-protected analytics dashboard (/admin/). Password = `ADMIN_PASSWORD` secret; the admin function aggregates `dac_events`/`dac_leads` |
 | `scripts/analytics-report.mjs` | `npm run report`: Firestore analytics → `data/analytics/` (gitignored) |
@@ -76,3 +92,27 @@ Facts gathered 2026-09-17 (re-verify before publishing):
   (currently empty), `<Stories>` on the homepage, `/stories/` (noindex while empty) with a "story" submission form that stores
   publish consent, and a `story` lead type in Functions. **Only add real, permissioned stories. Never write testimonials**
   (FTC 16 CFR 465). Once `stories.json` has entries, the old testimonial URLs 301 to `/stories/` automatically.
+- 2026-09-18: **Kept the traffic in-house.** Every school now has its own profile at `/schools/<slug>/` (verified facts,
+  what the format means, questions to ask, and a per-school inquiry form) instead of an outbound link; the comparison
+  table, city guides, homepage table and one blog post now link to those profiles. Built the real job board: filterable
+  `/jobs/`, detail pages at `/jobs/<slug>/` with `JobPosting` schema and `directApply`, an on-site application form, and a
+  talent pool. New lead types `school_inquiry`, `job_application`, `talent_pool` in Functions, each with consent naming the
+  single organization the lead goes to (`web/src/lib/consent.ts`). `npm run jobs:sync` publishes approved `dac_jobs`.
+  **`jobs.json` is empty and must stay that way until a real Colorado practice submits an opening** — never seed the board
+  with invented listings. While it's empty the static export builds one placeholder page, `/jobs/none-open/` (noindex, not
+  in the sitemap), because Next can't export a dynamic route with zero params.
+- 2026-09-18: **All outbound links moved to the footer.** New `web/src/data/sources.ts` registry; the footer carries an
+  "Official sources" strip (4 links) and `/resources/` is the full citation hub with `#id` anchors. Every page body and
+  blog post now cites sources via `/resources/#<id>`, and Pexels photo credits are plain text. Verified: every page in
+  `web/out` has exactly the 4 footer outbound links, and only `/resources/` has more.
+- 2026-09-19: **Job importer added** (`npm run jobs:import`), pulling only sources that permit republication: USAJOBS
+  (public domain, needs a free `USAJOBS_API_KEY` + `USAJOBS_EMAIL` in `.env`) and employer-published Lever/Greenhouse
+  board APIs listed in `scripts/job-sources.json`. Imported listings are replaced on every run, so vanishing from the
+  feed is how they expire; direct listings are never touched. Applications are still captured on-site; `onLeadCreated`
+  looks up `forwardTo` on the `dac_jobs` doc and puts it in the Telegram alert. Federal/state listings carry `official`
+  and render a mandatory-application panel with `directApply: false`.
+  **Measured 2026-09-18/19: this is a trickle, not a board.** Dental practices are small businesses and are almost never
+  on Lever/Greenhouse (Colorado Coalition for the Homeless has a dental team but no DA openings; the Peak Dental Services
+  Lever board 404s). Federal DA roles at Evans Army Community Hospital/Fort Carson are real but open for about a week at
+  a time. The ~200+ live Colorado DA jobs are on Indeed/ZipRecruiter/practice sites, which we will not ingest. Use the
+  importer for freshness and credibility; fill the board through `/hire/` outreach.

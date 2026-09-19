@@ -28,27 +28,27 @@ export default function EditorialPolicy() {
         </p>
         <ul>
           <li>
-            <a href="https://dpo.colorado.gov/Dental" target="_blank" rel="noopener">
+            <Link href="/resources/#dental-board">
               Colorado Dental Board (DORA)
-            </a>{" "}
+            </Link>{" "}
             for which tasks assistants may do
           </li>
           <li>
-            <a href="https://www.danb.org/" target="_blank" rel="noopener">
+            <Link href="/resources/#danb">
               Dental Assisting National Board (DANB)
-            </a>{" "}
+            </Link>{" "}
             for exams and state requirement summaries
           </li>
           <li>
-            <a href="https://www.bls.gov/ooh/healthcare/dental-assistants.htm" target="_blank" rel="noopener">
+            <Link href="/resources/#bls">
               U.S. Bureau of Labor Statistics
-            </a>{" "}
+            </Link>{" "}
             for pay and employment data
           </li>
           <li>
-            <a href="https://cdhe.colorado.gov/" target="_blank" rel="noopener">
+            <Link href="/resources/#cdhe">
               Colorado Department of Higher Education
-            </a>{" "}
+            </Link>{" "}
             for school approval and student records
           </li>
           <li>Each school&apos;s own website for tuition, length and schedule, with the date we checked</li>

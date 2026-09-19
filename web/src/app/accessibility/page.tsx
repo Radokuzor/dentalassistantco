@@ -21,9 +21,9 @@ export default function Accessibility() {
         <h2>Our goal</h2>
         <p>
           We aim to meet the{" "}
-          <a href="https://www.w3.org/TR/WCAG22/" target="_blank" rel="noopener">
+          <Link href="/resources/#wcag">
             Web Content Accessibility Guidelines (WCAG) 2.2
-          </a>{" "}
+          </Link>{" "}
           at level AA. That means readable color contrast, text descriptions for images, a clear heading structure on every
           page, labeled form fields, and pages that work without a mouse.
         </p>

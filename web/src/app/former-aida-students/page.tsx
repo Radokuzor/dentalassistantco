@@ -41,9 +41,9 @@ export default function FormerStudents() {
         <ul>
           <li>
             Start at{" "}
-            <a href="https://cdhe.colorado.gov/transcript-requests" target="_blank" rel="noopener">
+            <Link href="/resources/#cdhe-transcripts">
               CDHE transcript requests
-            </a>{" "}
+            </Link>{" "}
             and submit the online student record request form.
           </li>
           <li>
@@ -65,9 +65,9 @@ export default function FormerStudents() {
           Refund and financial-hold policies that were posted on this site were the school&apos;s policies, not ours. If you
           have an unresolved issue with a Colorado private occupational school, CDHE&apos;s Division of Private Occupational
           Schools accepts student complaints. See the{" "}
-          <a href="https://highered.colorado.gov/frequently-asked-questions-for-students-and-consumers" target="_blank" rel="noopener">
+          <Link href="/resources/#cdhe-students">
             CDHE student and consumer FAQ
-          </a>
+          </Link>
           .
         </p>
 

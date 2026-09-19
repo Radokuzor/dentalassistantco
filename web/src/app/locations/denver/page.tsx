@@ -47,9 +47,7 @@ export default function Denver() {
             {short.map((p) => (
               <tr key={p.school}>
                 <td>
-                  <a href={p.url} rel="nofollow noopener" target="_blank">
-                    {p.school}
-                  </a>
+                  <Link href={`/schools/${p.slug}/`}>{p.school}</Link>
                 </td>
                 <td>{p.cities.join(", ")}</td>
                 <td>{p.length}</td>
@@ -78,9 +76,7 @@ export default function Denver() {
             {college.map((p) => (
               <tr key={p.school}>
                 <td>
-                  <a href={p.url} rel="nofollow noopener" target="_blank">
-                    {p.school}
-                  </a>
+                  <Link href={`/schools/${p.slug}/`}>{p.school}</Link>
                 </td>
                 <td>{p.cities.join(", ")}</td>
                 <td>{p.length}</td>

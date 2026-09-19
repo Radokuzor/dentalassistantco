@@ -19,7 +19,7 @@ Colorado has everything from eight-week Saturday courses to two-year college pro
 
 ## Is the school legitimate?
 
-Private occupational schools in Colorado have to be approved by the [Colorado Department of Higher Education](https://cdhe.colorado.gov/) through its Division of Private Occupational Schools. Community colleges and career colleges have their own accreditation. Ask about approval on the first call. A good school will answer right away.
+Private occupational schools in Colorado have to be approved by the [Colorado Department of Higher Education](/resources/#cdhe) through its Division of Private Occupational Schools. Community colleges and career colleges have their own accreditation. Ask about approval on the first call. A good school will answer right away.
 
 Accreditation from the Commission on Dental Accreditation (CODA) is a separate question. Colorado doesn't require it, and most short programs don't have it. It matters if you want to qualify for DANB's CDA through the graduate route, or if you might continue on to hygiene later.
 

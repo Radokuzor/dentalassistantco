@@ -15,7 +15,7 @@ faq:
     a: "The BLS reports a national median of $48,070 a year ($23.11 an hour) as of May 2025."
 ---
 
-The typical U.S. dental assistant made [$48,070 in May 2025](https://www.bls.gov/ooh/healthcare/dental-assistants.htm), according to the Bureau of Labor Statistics. That's the midpoint, and a lot of assistants earn well above it. The ones who do usually got there by picking a specialty, taking on more responsibility, or both.
+The typical U.S. dental assistant made [$48,070 in May 2025](/resources/#bls), according to the Bureau of Labor Statistics. That's the midpoint, and a lot of assistants earn well above it. The ones who do usually got there by picking a specialty, taking on more responsibility, or both.
 
 These are the roles that tend to pay best, roughly in the order we see them come up.
 

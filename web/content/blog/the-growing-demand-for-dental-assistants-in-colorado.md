@@ -17,7 +17,7 @@ faq:
 
 Search "dental assistant" on any job board with your location set to Denver or Colorado Springs, and you'll find a long list of openings. The federal data explains why.
 
-The Bureau of Labor Statistics [projects dental assistant employment to grow 7% between 2025 and 2035](https://www.bls.gov/ooh/healthcare/dental-assistants.htm), which it calls much faster than average. There were about 388,600 dental assistant jobs in the country in 2025, and BLS expects around 53,000 openings every year.
+The Bureau of Labor Statistics [projects dental assistant employment to grow 7% between 2025 and 2035](/resources/#bls), which it calls much faster than average. There were about 388,600 dental assistant jobs in the country in 2025, and BLS expects around 53,000 openings every year.
 
 That 53,000 figure is the one that matters. Most of those openings aren't new positions. They're jobs that open up when someone leaves: an assistant goes back to school for hygiene, moves into office management, relocates or retires. Dental assisting has always been a starting point for many people, so offices are almost always replacing someone. For a newcomer, that steady turnover is good news.
 
@@ -27,7 +27,7 @@ The Front Range keeps adding people, and those people need dentists. New practic
 
 Specialists add to it. Orthodontic, pediatric and oral-surgery practices all want assistants with particular skills, and they tend to pay for them. An aging population also keeps schedules full with implants, crowns and periodontal work.
 
-If you want official Colorado numbers rather than national ones, BLS publishes [state and metro wage and employment estimates](https://www.bls.gov/oes/), and the Colorado Department of Labor and Employment has its own labor-market tools.
+If you want official Colorado numbers rather than national ones, BLS publishes [state and metro wage and employment estimates](/resources/#bls-oes), and the Colorado Department of Labor and Employment has its own labor-market tools.
 
 ## Where the openings are
 

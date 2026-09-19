@@ -17,17 +17,17 @@ faq:
 
 Most Colorado dental assistants earn somewhere around $21 to $23 an hour, based on what job sites are showing in 2026. Full time, that works out to roughly $44,000 to $48,000 a year before overtime. New assistants usually start below that range. Assistants with a few years behind them, or with a specialty, often earn above it.
 
-For a national benchmark, the Bureau of Labor Statistics puts the median at [$48,070 a year](https://www.bls.gov/ooh/healthcare/dental-assistants.htm) ($23.11 an hour) as of May 2025. Half of dental assistants in the U.S. earn more than that and half earn less.
+For a national benchmark, the Bureau of Labor Statistics puts the median at [$48,070 a year](/resources/#bls) ($23.11 an hour) as of May 2025. Half of dental assistants in the U.S. earn more than that and half earn less.
 
 ## Where these numbers come from
 
 | Source | Figure | What it's based on |
 |---|---|---|
-| [BLS Occupational Outlook](https://www.bls.gov/ooh/healthcare/dental-assistants.htm) | $48,070/yr national median | Employer surveys, May 2025 |
-| [ZipRecruiter, Colorado](https://www.ziprecruiter.com/Salaries/Dental-Assistant-Salary--in-Colorado) | about $21.30/hr | Job postings, September 2026 |
+| [BLS Occupational Outlook](/resources/#bls) | $48,070/yr national median | Employer surveys, May 2025 |
+| ZipRecruiter, Colorado | about $21.30/hr | Job postings, September 2026 |
 | Indeed, Colorado | about $23/hr | Postings and user reports |
 
-The job-site averages change month to month depending on which postings happen to be live, so read them as a range. For official state and metro figures, BLS publishes [occupational wage estimates](https://www.bls.gov/oes/) for Colorado, Denver and Colorado Springs.
+The job-site averages change month to month depending on which postings happen to be live, so read them as a range. For official state and metro figures, BLS publishes [occupational wage estimates](/resources/#bls-oes) for Colorado, Denver and Colorado Springs.
 
 ## What gets you paid more
 

@@ -121,7 +121,7 @@ export const collect = onRequest({ region: REGION, memory: "256MiB", maxInstance
 
 // ---------- lead intake ----------
 
-const LEAD_TYPES = new Set(["program_match", "contact", "employer", "story"]);
+const LEAD_TYPES = new Set(["program_match", "contact", "employer", "story", "school_inquiry", "job_application", "talent_pool"]);
 
 export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 5 }, async (req, res) => {
   if (req.method !== "POST" || !sameOrigin(req)) {
@@ -168,6 +168,9 @@ const LEAD_LABEL: Record<string, string> = {
   contact: "✉️ New contact message",
   employer: "🦷 New employer / job post",
   story: "⭐ New story submission (verify before publishing)",
+  school_inquiry: "🏫 New school inquiry",
+  job_application: "📄 New job application",
+  talent_pool: "👤 New talent-pool profile",
 };
 
 export const onLeadCreated = onDocumentCreated(
@@ -175,12 +178,24 @@ export const onLeadCreated = onDocumentCreated(
   async (event) => {
     const d = event.data?.data();
     if (!d) return;
+
+    // Job applications are forwarded to the practice. The address lives on the dac_jobs doc so it
+    // never ships to the browser; we surface it here so it is one tap to forward (and store it on
+    // the lead, ready for an automated send once an email provider is wired up).
+    let forwardTo: string | undefined;
+    if (d.type === "job_application" && d.answers?.jobSlug) {
+      const job = await db.collection("dac_jobs").where("slug", "==", d.answers.jobSlug).limit(1).get();
+      forwardTo = job.docs[0]?.get("forwardTo");
+      if (forwardTo) await event.data!.ref.update({ forwardTo, forwarded: false });
+    }
+
     const first = d.attribution?.first ?? {};
     const last = d.attribution?.last ?? {};
     const lines = [
       `<b>${LEAD_LABEL[d.type] ?? d.type}</b>`,
       ...Object.entries(d.contact ?? {}).map(([k, v]) => `<b>${esc(k)}:</b> ${esc(v)}`),
       ...Object.entries(d.answers ?? {}).map(([k, v]) => `• ${esc(k)}: ${esc(v)}`),
+      forwardTo ? `<b>➡️ Forward to:</b> ${esc(forwardTo)}` : "",
       `Consent to contact: ${d.consent?.given ? "✅ yes" : "❌ no"}`,
       `Page: ${esc(d.consent?.url)}`,
       `First touch: ${esc(first.utm_source ?? first.referrer ?? "?")} → ${esc(first.landing ?? "?")}`,

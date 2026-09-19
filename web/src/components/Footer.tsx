@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FOOTER_SOURCE_IDS, sourceById } from "@/data/sources";
 import { site } from "@/lib/site";
 
 const cols: { title: string; links: [string, string][] }[] = [
@@ -65,6 +66,29 @@ export function Footer() {
             </ul>
           </div>
         ))}
+      </div>
+      {/* The only outbound links on the site (plus /resources/). Page bodies stay internal — AGENTS.md #7. */}
+      <div className="relative border-t border-white/10">
+        <div className="mx-auto flex max-w-6xl flex-wrap items-baseline gap-x-4 gap-y-2 px-4 py-5 text-xs sm:px-6" data-section="footer_sources">
+          <p className="font-bold uppercase tracking-[0.2em] text-mint">Official sources</p>
+          {FOOTER_SOURCE_IDS.map((id) => sourceById(id)).map(
+            (s) =>
+              s && (
+                <a
+                  key={s.id}
+                  href={s.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="text-paper/70 underline decoration-paper/25 underline-offset-4 hover:text-white"
+                >
+                  {s.short} ↗
+                </a>
+              ),
+          )}
+          <Link href="/resources/" className="text-paper/70 underline decoration-paper/25 underline-offset-4 hover:text-white">
+            All sources we cite
+          </Link>
+        </div>
       </div>
       <div className="relative border-t border-white/10">
         <p className="mx-auto max-w-6xl px-4 py-6 text-xs leading-relaxed text-paper/60 sm:px-6">

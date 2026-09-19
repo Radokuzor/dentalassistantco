@@ -33,7 +33,7 @@ At a minimum, you should be paying for classroom instruction, lab time and hands
 
 ## The extras nobody mentions on the phone
 
-Scrubs and decent shoes can easily run $75 to $200. Books or online access might be free or cost a couple hundred dollars. A CPR/BLS class, if it isn't included, is usually $50 to $100. If you plan to take a DANB exam, check [DANB's current fees](https://www.danb.org/) before you budget.
+Scrubs and decent shoes can easily run $75 to $200. Books or online access might be free or cost a couple hundred dollars. A CPR/BLS class, if it isn't included, is usually $50 to $100. If you plan to take a DANB exam, check [DANB's current fees](/resources/#danb) before you budget.
 
 Then there's the cost that doesn't show up on any invoice. If you have to drop shifts at your current job to make class or an externship, count that lost pay as part of the price.
 

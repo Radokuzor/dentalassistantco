@@ -191,7 +191,11 @@ export default function Home() {
             <tbody>
               {programs.map((p) => (
                 <tr key={p.school} className="border-t border-line">
-                  <td className="px-5 py-4 font-semibold">{p.school}</td>
+                  <td className="px-5 py-4 font-semibold">
+                    <Link href={`/schools/${p.slug}/`} data-track="school_row" data-track-id={p.slug} className="hover:text-teal hover:underline">
+                      {p.school}
+                    </Link>
+                  </td>
                   <td className="px-5 py-4">{p.cities.join(", ")}</td>
                   <td className="px-5 py-4">{p.length}</td>
                   <td className="px-5 py-4">{p.schedule}</td>

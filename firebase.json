@@ -34,6 +34,11 @@
         "type": 301
       },
       {
+        "source": "/schools{,/}",
+        "destination": "/programs/dental-assistant/",
+        "type": 301
+      },
+      {
         "source": "/apply-online{,/**}",
         "destination": "/find-a-program/",
         "type": 301

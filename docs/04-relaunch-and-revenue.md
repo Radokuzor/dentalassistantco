@@ -40,6 +40,27 @@
    - Externship-matching marketplace (schools pay to find externship offices)
    - Free community (Discord or Facebook group) that feeds the email list
 
+## The closed-loop model (built 2026-09-18)
+Nothing about a school or a job sends the visitor somewhere else. That is the product, not a preference: a lead we
+capture is a lead we can sell, and an outbound link is a lead we hand over for free.
+
+| Surface | What it holds | What we capture | What it is worth |
+|---|---|---|---|
+| `/schools/<slug>/` | Cost, length, schedule, locations, what the format means, questions to ask | `school_inquiry` lead, consent naming that one school | Per-lead fee, or a monthly featured-school fee |
+| `/programs/dental-assistant/`, city guides, homepage | Comparison tables linking to the profiles, never to the schools | Quiz starts, profile visits | Feeds the profiles and the quiz |
+| `/find-a-program/` | The 4-question quiz | `program_match` lead, consent covering the Partners list | Exclusive or shared lead sold to several schools |
+| `/jobs/<slug>/` | The full listing with pay; `JobPosting` schema with `directApply: true` | `job_application` lead, consent naming that one employer | Paid and featured postings, employer subscriptions |
+| `/jobs/#talent-pool` | Candidate profile: city, experience, x-ray credential, availability | `talent_pool` lead | Offices pay to unlock contacts, or a placement fee |
+| `/hire/` | Employer posting form | `employer` lead → `dac_jobs` → `npm run jobs:sync` | Supply for the board |
+
+**Consent design.** The quiz leans on the Partners page because it can introduce several schools at once. Every other
+form names the single organization the lead goes to, which is safer footing under TCPA one-to-one consent and much
+stronger in a dispute. Wording lives in `web/src/lib/consent.ts`, and the exact string shown is stored with the lead.
+
+**Before selling any lead:** get a written agreement with the school or office, add it to `web/src/data/partners.ts`, and
+set `partner: true` on its program so the profile discloses the relationship. Until then we capture and follow up
+ourselves. Never forward a lead to an organization the consent text the visitor accepted does not name.
+
 ## Launch phases
 | Phase | Scope | Exit criteria |
 |---|---|---|

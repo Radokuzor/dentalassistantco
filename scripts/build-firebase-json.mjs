@@ -22,6 +22,8 @@ const permanent = [
   ...Object.entries(consolidated).map(([from, to]) => [`/blog/${from}{,/}`, `/blog/${to}/`]),
   ["/programs/edda-test{,/**}", "/programs/expanded-duties-dental-assistant/"],
   ["/job-search{,/**}", "/jobs/"],
+  // The school profiles live at /schools/<slug>/; the comparison page is the hub, so /schools/ points there.
+  ["/schools{,/}", "/programs/dental-assistant/"],
   ["/apply-online{,/**}", "/find-a-program/"],
   ["/book-tour{,/**}", "/find-a-program/"],
   ["/lp{,/**}", "/find-a-program/"],

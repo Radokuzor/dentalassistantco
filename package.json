@@ -8,6 +8,8 @@
     "deploy:hosting": "npm --prefix web run build && firebase deploy --only hosting",
     "wayback:fetch": "node scripts/fetch-wayback.mjs",
     "wayback:repair": "node scripts/repair-wayback.mjs",
-    "report": "node scripts/analytics-report.mjs"
+    "report": "node scripts/analytics-report.mjs",
+    "jobs:sync": "node scripts/sync-jobs.mjs",
+    "jobs:import": "node scripts/import-jobs.mjs"
   }
 }

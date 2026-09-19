@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { getPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
+import { activeJobs } from "@/data/jobs";
+import { programs } from "@/data/programs";
 import stories from "@/data/stories.json";
 
 export const dynamic = "force-static";
@@ -19,6 +21,10 @@ export const pageGroups: { title: string; pages: [path: string, label: string][]
     ],
   },
   {
+    title: "School profiles",
+    pages: programs.map((p) => [`/schools/${p.slug}/`, p.school] as [string, string]),
+  },
+  {
     title: "Cities",
     pages: [
       ["/locations/denver/", "Denver & Front Range"],
@@ -29,6 +35,7 @@ export const pageGroups: { title: string; pages: [path: string, label: string][]
     title: "Jobs & employers",
     pages: [
       ["/jobs/", "Dental assistant jobs"],
+      ...activeJobs().map((j) => [`/jobs/${j.slug}/`, `${j.title} — ${j.employer}, ${j.city}`] as [string, string]),
       ["/colorado-needs-dental-assistants/", "Why Colorado needs dental assistants"],
       ["/hire/", "Hire a dental assistant"],
       // /stories/ stays out of the sitemap (and noindex) until it has real stories.

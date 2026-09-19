@@ -18,6 +18,11 @@ export default function Partners() {
           below so they can reach you about dental assistant programs or jobs. We update this list whenever a partner joins
           or leaves.
         </p>
+        <p>
+          Two forms work differently, on purpose. When you ask a question on a school profile, or apply for a job on the
+          job board, your details go to <em>that one</em> school or practice — the form names it, and nobody else receives
+          it. The list below only covers the match quiz, where we may introduce you to more than one organization.
+        </p>
         {partners.length === 0 ? (
           <p>
             <strong>We currently have no partners.</strong> Your information is used only by DentalAssistantCO to follow up

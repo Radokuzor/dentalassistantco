@@ -22,7 +22,7 @@ export default function Demand() {
         <ul>
           <li>
             The U.S. Bureau of Labor Statistics projects steady national growth for dental assistants, with tens of thousands of
-            openings each year as people change careers or retire (<a href="https://www.bls.gov/ooh/healthcare/dental-assistants.htm" rel="noopener" target="_blank">BLS Occupational Outlook</a>).
+            openings each year as people change careers or retire (<Link href="/resources/#bls">BLS Occupational Outlook</Link>).
           </li>
           <li>Colorado&apos;s population growth along the Front Range brings new dental practices and more patients.</li>
           <li>Dentists increasingly rely on assistants for x-rays, digital scanning, sterilization and patient communication.</li>

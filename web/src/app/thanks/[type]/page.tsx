@@ -19,6 +19,18 @@ const copy: Record<string, { title: string; body: string }> = {
     title: "Your opening is in",
     body: "We'll review it and reach out to confirm the details before it goes live on the job board.",
   },
+  school: {
+    title: "Question sent",
+    body: "We'll get you an answer, usually the same day, and by phone or text if that is faster. If the school is slow to respond, we'll chase it.",
+  },
+  job: {
+    title: "Application sent",
+    body: "The practice has your details. We keep a copy, so if you have not heard anything in about a week, tell us and we'll follow up for you.",
+  },
+  "talent-pool": {
+    title: "You're in the pool",
+    body: "We'll email you Colorado openings that match your profile, and let you know when an office asks to be put in touch. Nothing else, and you can leave any time.",
+  },
 };
 
 export const dynamicParams = false;
