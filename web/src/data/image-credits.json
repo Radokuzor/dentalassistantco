@@ -115,5 +115,77 @@
     "url": "https://www.pexels.com/photo/patient-talking-to-a-receptionist-at-a-dental-clinic-6809664/",
     "width": 5473,
     "height": 3654
+  },
+  "blog-interview": {
+    "pexelsId": 9870223,
+    "alt": "Close-up of a diverse business handshake over documents, symbolizing agreement and collaboration.",
+    "photographer": "Ron Lach",
+    "photographerUrl": "https://www.pexels.com/@ron-lach",
+    "url": "https://www.pexels.com/photo/unrecognizable-hands-handshaking-over-table-9870223/",
+    "width": 4490,
+    "height": 2993
+  },
+  "blog-hygienist": {
+    "pexelsId": 5622010,
+    "alt": "Dentist performing an oral examination on a patient in a clinic setting.",
+    "photographer": "Gustavo Fring",
+    "photographerUrl": "https://www.pexels.com/@gustavo-fring",
+    "url": "https://www.pexels.com/photo/dentist-treating-womans-teeth-5622010/",
+    "width": 5760,
+    "height": 3840
+  },
+  "blog-medical": {
+    "pexelsId": 35645526,
+    "alt": "A nurse in blue scrubs checks a patient's blood pressure in a clinical setting.",
+    "photographer": "Sahil Singh",
+    "photographerUrl": "https://www.pexels.com/@sahilcaptures",
+    "url": "https://www.pexels.com/photo/healthcare-professional-checking-patient-blood-pressure-35645526/",
+    "width": 3936,
+    "height": 2624
+  },
+  "blog-balance": {
+    "pexelsId": 4260485,
+    "alt": "A mother helps her daughter with schoolwork on a laptop at home, promoting education and bonding.",
+    "photographer": "August de Richelieu",
+    "photographerUrl": "https://www.pexels.com/@august-de-richelieu",
+    "url": "https://www.pexels.com/photo/mother-helping-her-daughter-with-her-homework-4260485/",
+    "width": 7096,
+    "height": 4736
+  },
+  "blog-rapport": {
+    "pexelsId": 5622250,
+    "alt": "A man wearing protective glasses smiles during a dental checkup.",
+    "photographer": "Gustavo Fring",
+    "photographerUrl": "https://www.pexels.com/@gustavo-fring",
+    "url": "https://www.pexels.com/photo/smiling-man-wearing-dental-bib-and-dental-protective-glasses-5622250/",
+    "width": 5760,
+    "height": 3840
+  },
+  "blog-tech": {
+    "pexelsId": 5355731,
+    "alt": "Close-up of a dentist analyzing a dental X-ray on a digital tablet in a clinic setting.",
+    "photographer": "Tima Miroshnichenko",
+    "photographerUrl": "https://www.pexels.com/@tima-miroshnichenko",
+    "url": "https://www.pexels.com/photo/person-holding-black-ipad-with-white-case-5355731/",
+    "width": 6000,
+    "height": 4000
+  },
+  "blog-community": {
+    "pexelsId": 7108319,
+    "alt": "Doctors talking with patients during a medical appointment in a clinic office setting.",
+    "photographer": "Pavel Danilyuk",
+    "photographerUrl": "https://www.pexels.com/@pavel-danilyuk",
+    "url": "https://www.pexels.com/photo/couple-at-medical-appointment-7108319/",
+    "width": 5473,
+    "height": 3654
+  },
+  "blog-career": {
+    "pexelsId": 5622026,
+    "alt": "Dentists with hygienic gear assisting a patient in a professional dental clinic, ensuring comfort and care.",
+    "photographer": "Gustavo Fring",
+    "photographerUrl": "https://www.pexels.com/@gustavo-fring",
+    "url": "https://www.pexels.com/photo/dentists-and-patient-5622026/",
+    "width": 5760,
+    "height": 3840
   }
 }

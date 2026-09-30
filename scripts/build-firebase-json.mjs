@@ -16,6 +16,12 @@ const consolidated = {
   "dental-assistant-demand-colorado": "the-growing-demand-for-dental-assistants-in-colorado",
   "additional-responsibilities-edda": "understanding-the-role-of-expanded-duties-dental-assistants-edda",
   "difference-dental-assistant-expanded-duties-dental-assistant": "understanding-the-role-of-expanded-duties-dental-assistants-edda",
+  "3-reasons-new-dental-assistant-needs-pursue-continuing-education": "importance-continuing-education-dental-assistants",
+  "dental-assistant-perfect-starting-point": "considering-dental-assistant-career",
+  "5-reasons-love-dental-assisting": "considering-dental-assistant-career",
+  "important-hands-dental-assistant-training": "live-patient-clinic-advantages-dental-assisting-education",
+  "dental-assistants-critical-successful-dental-practice": "a-day-in-the-life-of-a-dental-assistant-what-to-expect",
+  "eco-friendly-practices-how-dental-assistants-can-contribute": "innovative-dental-technologies-dental-assistant",
 };
 
 const permanent = [
@@ -27,6 +33,9 @@ const permanent = [
   ["/apply-online{,/**}", "/find-a-program/"],
   ["/book-tour{,/**}", "/find-a-program/"],
   ["/lp{,/**}", "/find-a-program/"],
+  // Old ad landing page; still gets hits (analytics 404 report, 2026-09-30).
+  ["/lander{,/**}", "/find-a-program/"],
+  ["/author{,/**}", "/blog/"],
   ["/why-choose-aida{,/**}", "/programs/dental-assistant/"],
   ["/live-patient-clinics{,/**}", "/blog/live-patient-clinic-advantages-dental-assisting-education/"],
   ["/student-testimonials{,/**}", storiesOr("/programs/dental-assistant/")],

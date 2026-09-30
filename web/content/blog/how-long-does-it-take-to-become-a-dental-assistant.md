@@ -42,7 +42,7 @@ From deciding to go for it to working chairside, three to four months is a fair 
 
 ## What slows people down
 
-Weekend cohorts fill up, so the class you want may not start for a month or two. Calling early helps.
+Weekend cohorts fill up, so the class you want may not start for a month or two. Calling early helps. Here are the [weekend and evening programs in Colorado](/blog/part-time-weekend-dental-assistant-programs-colorado/).
 
 If your program doesn't include Colorado-approved radiography, you'll need to fit that in before you can take x-rays ([here's the rule](/requirements/)).
 

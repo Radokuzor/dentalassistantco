@@ -35,7 +35,7 @@ In practice, a Colorado assistant's "expanded" role depends on two things: what 
 
 Nobody starts in expanded duties. Most assistants who end up there spent a year or two getting fast and dependable at the basics first. Along the way they qualified for x-rays ([Colorado's routes](/requirements/)), and many earned a DANB credential such as the CDA ([how DANB works here](/blog/danb-certification-required-colorado/)).
 
-After that, it's mostly continuing education in the specific skills your dentist wants to hand off, plus a paper trail. Keep certificates for every course and ask the dentist to sign off on your competency for each task. If you ever change offices, that folder does a lot of your talking for you.
+After that, it's mostly [continuing education](/blog/importance-continuing-education-dental-assistants/) in the specific skills your dentist wants to hand off, plus a paper trail. Keep certificates for every course and ask the dentist to sign off on your competency for each task. If you ever change offices, that folder does a lot of your talking for you.
 
 Once you're taking on more of the work, it's reasonable to ask to be paid for it. [The highest-paying dental assistant jobs](/blog/highest-paying-dental-assistant-job/) has a sense of the range.
 

@@ -39,7 +39,7 @@ Read the refund policy before you sign the enrollment agreement, not after. If a
 
 ## Will the schedule work?
 
-Weekend, evening or weekday? And what happens if you miss a class because your kid is sick? Some programs have makeup sessions and others don't. Better to ask now than find out in week six.
+Weekend, evening or weekday? And what happens if you miss a class because your kid is sick? Some programs have makeup sessions and others don't. Better to ask now than find out in week six. We list every [weekend and evening program in Colorado](/blog/part-time-weekend-dental-assistant-programs-colorado/).
 
 ## Do graduates get jobs?
 

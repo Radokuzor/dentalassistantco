@@ -36,7 +36,14 @@ export default async function PostPage({ params }: Props) {
   const post = getPost((await params).slug);
   if (!post) notFound();
   const credit = post.image ? (credits as Record<string, Credit>)[post.image] : undefined;
-  const related = getPosts().filter((p) => p.slug !== post.slug && p.cluster === post.cluster).slice(0, 3);
+  // Same topic first, then the newest guides from other topics, so every post links onward to three more.
+  const others = getPosts().filter((p) => p.slug !== post.slug);
+  const related = [...others.filter((p) => p.cluster === post.cluster), ...others.filter((p) => p.cluster !== post.cluster)].slice(0, 3);
+  // Most readers never reach the footer CTA (see the analytics report's read-depth column), so a
+  // compact one goes in before the third section, while they're still reading.
+  const h2s = [...post.html.matchAll(/<h2[\s>]/g)];
+  const splitAt = h2s.length >= 3 ? h2s[2].index : -1;
+  const [bodyTop, bodyRest] = splitAt > 0 ? [post.html.slice(0, splitAt), post.html.slice(splitAt)] : [post.html, ""];
 
   return (
     <article>
@@ -84,7 +91,23 @@ export default async function PostPage({ params }: Props) {
           </figcaption>
         </figure>
       )}
-      <div className="prose-guide mx-auto max-w-3xl px-4 py-10 sm:px-6" dangerouslySetInnerHTML={{ __html: post.html }} />
+      <div className={`prose-guide mx-auto max-w-3xl px-4 sm:px-6 ${bodyRest ? "pt-10" : "py-10"}`} dangerouslySetInnerHTML={{ __html: bodyTop }} />
+      {bodyRest && (
+        <>
+          <aside className="mx-auto my-8 max-w-3xl px-4 sm:px-6" data-section="post_inline_cta">
+            <div className="flex flex-col gap-4 rounded-2xl border border-line bg-mint/15 p-5 sm:flex-row sm:items-center sm:justify-between">
+              <p className="font-semibold">
+                Thinking about training in Colorado?
+                <span className="block text-sm font-normal text-ink-soft">Answer 4 quick questions and see programs that fit your schedule and budget.</span>
+              </p>
+              <Link href="/find-a-program/" data-track="cta" data-track-id="post_inline_quiz" className="shrink-0 rounded-full bg-coral px-5 py-2.5 text-center font-semibold text-white">
+                Find my program →
+              </Link>
+            </div>
+          </aside>
+          <div className="prose-guide mx-auto max-w-3xl px-4 pb-10 sm:px-6" dangerouslySetInnerHTML={{ __html: bodyRest }} />
+        </>
+      )}
 
       {post.faq.length > 0 && (
         <section className="mx-auto max-w-3xl px-4 sm:px-6" data-section="post_faq">

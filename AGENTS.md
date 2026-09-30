@@ -133,3 +133,10 @@ Facts gathered 2026-09-17 (re-verify before publishing):
   `dac_jobs` doc for the Telegram alert. **No automatic email-to-employer yet** — forwarding the
   application from the Telegram alert is still a manual step until an email provider (Resend/
   SendGrid) is wired in.
+- 2026-09-30: **Tier 2 blog backlog cleared (28 posts).** Rewrote the 12 remaining legacy posts and 301-consolidated 6
+  overlapping ones (map in `scripts/build-firebase-json.mjs`), so no legacy URL 302s to `/blog/` any more. Added 3 new
+  posts chosen from analytics demand: weekend/evening programs, orthodontic assistant, jobs with no experience. Added
+  `/lander/` → `/find-a-program/` and `/author/**` → `/blog/` (404s in the report). Posts now show a compact quiz CTA
+  before the 3rd section (`post_inline_quiz`), because read-to-90% was 0–25%. The click tracker no longer counts form
+  fields and FAQ `<summary>` toggles as dead clicks. New sources: `bls-hygienists`, `bls-medical-assistants`,
+  `danb-renewal`, `epa-amalgam`.

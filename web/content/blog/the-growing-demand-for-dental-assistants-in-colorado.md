@@ -37,7 +37,7 @@ Mountain towns and rural areas post fewer jobs, but they also get fewer applican
 
 ## Demand doesn't mean anyone gets hired
 
-Offices are hiring, but they're still choosy. The applicants who get offers fastest can usually take x-rays from the first day ([Colorado's rule is here](/requirements/)), understand sterilization well enough not to need supervision, and hold a current BLS card. Beyond that, being reliable and calm with nervous patients goes a long way.
+Offices are hiring, but they're still choosy. The applicants who get offers fastest can usually take x-rays from the first day ([Colorado's rule is here](/requirements/)), understand sterilization well enough not to need supervision, and hold a current BLS card. Beyond that, being reliable and calm with nervous patients goes a long way. [How to get hired](/blog/tips-getting-hired-dental-assistant/).
 
 Put those together and the outlook for a trained assistant in Colorado is very good. If you want to see what that turns into financially, read our [Colorado salary guide](/blog/dental-assistant-salary-colorado/). There's more background on the shortage on our page about [why Colorado needs dental assistants](/colorado-needs-dental-assistants/).
 

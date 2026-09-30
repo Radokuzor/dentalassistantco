@@ -54,7 +54,8 @@ export function AnalyticsProvider() {
         section: target.closest<HTMLElement>("[data-section]")?.dataset.section ?? "page",
         tag: target.tagName.toLowerCase(),
         label: clickLabel(target, Boolean(el)),
-        interactive: Boolean(el),
+        // Form fields and FAQ toggles work without being links, so they aren't dead clicks.
+        interactive: Boolean(el) || Boolean(target.closest("summary, input, select, textarea, label")),
       });
 
       if (!el) return;

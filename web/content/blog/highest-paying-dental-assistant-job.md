@@ -25,7 +25,7 @@ Surgical assisting is its own world: extractions, implants, bone grafts and seda
 
 ## Orthodontics
 
-Ortho practices move a lot of patients through open-bay chairs, many of them kids and teenagers. Depending on what the rules and the orthodontist allow, assistants may change wires, prep teeth for bonding, take scans and coach patients on keeping their appliances clean. It's fast and repetitive work, and assistants who keep up are hard to replace.
+Ortho practices move a lot of patients through open-bay chairs, many of them kids and teenagers. Depending on what the rules and the orthodontist allow, assistants may change wires, prep teeth for bonding, take scans and coach patients on keeping their appliances clean. It's fast and repetitive work, and assistants who keep up are hard to replace. More in our [orthodontic assistant guide](/blog/orthodontic-assistant-colorado/).
 
 ## Expanded duties
 

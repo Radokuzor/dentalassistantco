@@ -24,6 +24,36 @@
         "type": 301
       },
       {
+        "source": "/blog/3-reasons-new-dental-assistant-needs-pursue-continuing-education{,/}",
+        "destination": "/blog/importance-continuing-education-dental-assistants/",
+        "type": 301
+      },
+      {
+        "source": "/blog/dental-assistant-perfect-starting-point{,/}",
+        "destination": "/blog/considering-dental-assistant-career/",
+        "type": 301
+      },
+      {
+        "source": "/blog/5-reasons-love-dental-assisting{,/}",
+        "destination": "/blog/considering-dental-assistant-career/",
+        "type": 301
+      },
+      {
+        "source": "/blog/important-hands-dental-assistant-training{,/}",
+        "destination": "/blog/live-patient-clinic-advantages-dental-assisting-education/",
+        "type": 301
+      },
+      {
+        "source": "/blog/dental-assistants-critical-successful-dental-practice{,/}",
+        "destination": "/blog/a-day-in-the-life-of-a-dental-assistant-what-to-expect/",
+        "type": 301
+      },
+      {
+        "source": "/blog/eco-friendly-practices-how-dental-assistants-can-contribute{,/}",
+        "destination": "/blog/innovative-dental-technologies-dental-assistant/",
+        "type": 301
+      },
+      {
         "source": "/programs/edda-test{,/**}",
         "destination": "/programs/expanded-duties-dental-assistant/",
         "type": 301
@@ -51,6 +81,16 @@
       {
         "source": "/lp{,/**}",
         "destination": "/find-a-program/",
+        "type": 301
+      },
+      {
+        "source": "/lander{,/**}",
+        "destination": "/find-a-program/",
+        "type": 301
+      },
+      {
+        "source": "/author{,/**}",
+        "destination": "/blog/",
         "type": 301
       },
       {
@@ -152,96 +192,6 @@
         "source": "/blog/author/**",
         "destination": "/blog/",
         "type": 301
-      },
-      {
-        "source": "/blog/3-reasons-new-dental-assistant-needs-pursue-continuing-education{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/5-reasons-love-dental-assisting{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/a-day-in-the-life-of-a-dental-assistant-what-to-expect{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/considering-dental-assistant-career{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/dental-assistant-perfect-starting-point{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/dental-assistants-critical-successful-dental-practice{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/dental-assisting-vs-medical-assisting-career-path{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/eco-friendly-practices-how-dental-assistants-can-contribute{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/how-to-balance-work-family-and-dental-assisting-school{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/importance-continuing-education-dental-assistants{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/important-hands-dental-assistant-training{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/innovative-dental-technologies-dental-assistant{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/skills-gain-dental-assistant-training{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/the-difference-between-dental-assistant-and-dental-hygienist-careers{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/the-role-of-dental-assistants-in-community-health-programs{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/tips-getting-hired-dental-assistant{,/}",
-        "destination": "/blog/",
-        "type": 302
-      },
-      {
-        "source": "/blog/top-4-dental-assisting-myths-debunked{,/}",
-        "destination": "/blog/",
-        "type": 302
       }
     ],
     "rewrites": [

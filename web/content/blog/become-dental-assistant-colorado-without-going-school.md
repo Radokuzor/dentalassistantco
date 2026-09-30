@@ -31,7 +31,7 @@ Learn the language before the interview. Tooth numbering, basic procedures, the 
 
 Look for postings that say "will train," "entry level" or "sterilization tech." Bigger group practices and DSOs are more likely to have a training setup than a two-chair office where the dentist has no spare time.
 
-Don't turn down the side door. Front desk, sterilization and patient coordinator jobs put you in the building. Once the team knows you show up and pay attention, moving to chairside is a much shorter conversation. If you already work in a dental office in another role, you're in the best position of anyone.
+Don't turn down the side door ([more on landing a first job with no experience](/blog/dental-assistant-jobs-no-experience-colorado/)). Front desk, sterilization and patient coordinator jobs put you in the building. Once the team knows you show up and pay attention, moving to chairside is a much shorter conversation. If you already work in a dental office in another role, you're in the best position of anyone.
 
 ## The x-ray problem
 

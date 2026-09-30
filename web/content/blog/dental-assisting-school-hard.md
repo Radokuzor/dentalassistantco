@@ -45,11 +45,11 @@ If you can, learn the terminology before day one. Free online resources are enou
 
 Study for twenty minutes a day rather than three hours the night before class. Quiz yourself on instrument names from photos. Walk through tray setups in your head while you're driving. Ask questions in the lab, because that's the place where mistakes don't cost anything.
 
-Most importantly, choose a schedule you can actually keep. Colorado's weekend programs exist because most students are working. If you're balancing a job and kids, a Saturday class you never miss beats a weekday class you keep missing.
+Most importantly, choose a schedule you can actually keep. Colorado's weekend programs exist because most students are working. If you're balancing a job and kids, a Saturday class you never miss beats a weekday class you keep missing. [How to balance work, family and school](/blog/how-to-balance-work-family-and-dental-assisting-school/).
 
 ## How it compares
 
-Dental assisting programs are much shorter and less science-heavy than hygiene programs, which are college degrees with prerequisites and a licensing exam. They're closer to medical assisting in difficulty, just more focused on one area of healthcare.
+Dental assisting programs are much shorter and less science-heavy than hygiene programs, which are college degrees with prerequisites and a licensing exam ([assistant vs. hygienist](/blog/the-difference-between-dental-assistant-and-dental-hygienist-careers/)). They're closer to medical assisting in difficulty, just more focused on one area of healthcare.
 
 If you can keep up steady study and practice, you can handle it, including while holding a job. To plan the time, see [how long it takes to become a dental assistant](/blog/how-long-does-it-take-to-become-a-dental-assistant/). To find a program that won't leave you on your own, use our [school checklist](/blog/choose-dental-assisting-school-thats-right/).
 

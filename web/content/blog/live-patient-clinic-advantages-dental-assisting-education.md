@@ -25,7 +25,7 @@ Dental offices run on tight schedules. You have to seat the patient, have the ri
 
 ## Talking to people
 
-Much of an assistant's day is spent reassuring people. You explain what's about to happen to someone who's anxious. You go over aftercare with a patient who's still numb and not really listening. You help a kid who doesn't want to be there. You only get good at that by doing it, and getting that practice in school is easier than learning it on your first week at a job.
+Much of an assistant's day is spent reassuring people. You explain what's about to happen to someone who's anxious. You go over aftercare with a patient who's still numb and not really listening. You help a kid who doesn't want to be there. You only get good at that by doing it, and getting that practice in school is easier than learning it on your first week at a job. [Communication skills for dental assistants](/blog/building-patient-rapport-the-importance-of-communication-in-dental-assisting/).
 
 ## X-rays
 
