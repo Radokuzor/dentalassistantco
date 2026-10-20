@@ -40,6 +40,6 @@ export function PageHero({ eyebrow, title, intro, crumbs = [] }: { eyebrow?: str
   );
 }
 
-export function Prose({ children }: { children: React.ReactNode }) {
-  return <div className="prose-guide mx-auto max-w-3xl px-4 py-12 sm:px-6">{children}</div>;
+export function Prose({ children, className = "py-12" }: { children: React.ReactNode; className?: string }) {
+  return <div className={`prose-guide mx-auto max-w-3xl px-4 sm:px-6 ${className}`}>{children}</div>;
 }

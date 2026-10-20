@@ -3,12 +3,22 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { JsonLd } from "@/components/JsonLd";
+import { LeadQuiz } from "@/components/LeadQuiz";
 import { PageHero } from "@/components/PageHero";
 import credits from "@/data/image-credits.json";
 import { getPost, getPosts } from "@/lib/posts";
 import { site } from "@/lib/site";
 
 type Props = { params: Promise<{ slug: string }> };
+
+/** Posts where the reader is closest to enrolling, so the real quiz goes inline mid-article instead
+ *  of a link to it. Adding a slug here is the whole change; every other post keeps the link CTA. */
+const INLINE_QUIZ_SLUGS = new Set([
+  "dental-assistant-colorado-licensed",
+  "become-dental-assistant-colorado-without-going-school",
+  "highest-paying-dental-assistant-job",
+  "understanding-the-role-of-expanded-duties-dental-assistants-edda",
+]);
 type Credit = { photographer: string; photographerUrl: string; url: string; width: number; height: number; alt: string };
 
 export const dynamicParams = false;
@@ -94,17 +104,23 @@ export default async function PostPage({ params }: Props) {
       <div className={`prose-guide mx-auto max-w-3xl px-4 sm:px-6 ${bodyRest ? "pt-10" : "py-10"}`} dangerouslySetInnerHTML={{ __html: bodyTop }} />
       {bodyRest && (
         <>
-          <aside className="mx-auto my-8 max-w-3xl px-4 sm:px-6" data-section="post_inline_cta">
-            <div className="flex flex-col gap-4 rounded-2xl border border-line bg-mint/15 p-5 sm:flex-row sm:items-center sm:justify-between">
-              <p className="font-semibold">
-                Thinking about training in Colorado?
-                <span className="block text-sm font-normal text-ink-soft">Answer 4 quick questions and see programs that fit your schedule and budget.</span>
-              </p>
-              <Link href="/find-a-program/" data-track="cta" data-track-id="post_inline_quiz" className="shrink-0 rounded-full bg-coral px-5 py-2.5 text-center font-semibold text-white">
-                Find my program →
-              </Link>
-            </div>
-          </aside>
+          {INLINE_QUIZ_SLUGS.has(post.slug) ? (
+            <aside className="mx-auto my-10 max-w-3xl px-4 sm:px-6" data-section="post_inline_quiz">
+              <LeadQuiz compact />
+            </aside>
+          ) : (
+            <aside className="mx-auto my-8 max-w-3xl px-4 sm:px-6" data-section="post_inline_cta">
+              <div className="flex flex-col gap-4 rounded-2xl border border-line bg-mint/15 p-5 sm:flex-row sm:items-center sm:justify-between">
+                <p className="font-semibold">
+                  Thinking about training in Colorado?
+                  <span className="block text-sm font-normal text-ink-soft">Answer 4 quick questions and see programs that fit your schedule and budget.</span>
+                </p>
+                <Link href="/find-a-program/" data-track="cta" data-track-id="post_inline_quiz" className="shrink-0 rounded-full bg-coral px-5 py-2.5 text-center font-semibold text-white">
+                  Find my program →
+                </Link>
+              </div>
+            </aside>
+          )}
           <div className="prose-guide mx-auto max-w-3xl px-4 pb-10 sm:px-6" dangerouslySetInnerHTML={{ __html: bodyRest }} />
         </>
       )}

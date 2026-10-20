@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { getAttribution, getIds, track } from "@/lib/analytics";
 import { QUIZ_CONSENT } from "@/lib/consent";
+import { useFormGate } from "@/lib/formGate";
 import { cn } from "@/lib/cn";
 
 const CONSENT_TEXT = QUIZ_CONSENT;
@@ -30,6 +31,7 @@ export function LeadQuiz({ compact = false }: { compact?: boolean }) {
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
   const progress = useRef({ started: false, done: false, step: 0 });
+  const gate = useFormGate();
   const total = STEPS.length + 1;
 
   // Record abandonment when the visitor leaves mid-quiz.
@@ -45,6 +47,7 @@ export function LeadQuiz({ compact = false }: { compact?: boolean }) {
   const choose = (s: Step, option: string) => {
     if (!progress.current.started) {
       progress.current.started = true;
+      gate.touch();
       track("quiz_start", { location: compact ? "inline" : "page" });
     }
     setAnswers((a) => ({ ...a, [s.id]: option }));
@@ -65,6 +68,13 @@ export function LeadQuiz({ compact = false }: { compact?: boolean }) {
       track("form_error", { form_id: "program_match", field: problems.join(",") });
       return;
     }
+    // Time gate: a real person cannot finish four questions plus five fields in under three
+    // seconds. Ask for a second press instead of rejecting, so nobody is lost to a false positive.
+    if (gate.tooFast()) {
+      setError("That went a little too fast. Please check your details and press the button once more.");
+      track("form_error", { form_id: "program_match", field: "too_fast" });
+      return;
+    }
     setError("");
     setSending(true);
     try {
@@ -79,6 +89,7 @@ export function LeadQuiz({ compact = false }: { compact?: boolean }) {
           attribution: getAttribution(),
           ids: getIds(),
           page: location.href,
+          elapsedMs: gate.elapsed(),
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
@@ -99,7 +110,10 @@ export function LeadQuiz({ compact = false }: { compact?: boolean }) {
       <input
         {...props}
         value={contact[key]}
-        onFocus={() => track("form_start", { form_id: "program_match", field: key })}
+        onFocus={() => {
+          gate.touch();
+          track("form_start", { form_id: "program_match", field: key });
+        }}
         onChange={(e) => setContact((c) => ({ ...c, [key]: e.target.value }))}
         className="mt-1 w-full rounded-xl border border-line bg-white px-3.5 py-2.5 text-base outline-none transition focus:border-teal focus:ring-2 focus:ring-teal/20"
       />

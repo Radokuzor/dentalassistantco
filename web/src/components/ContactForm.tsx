@@ -4,6 +4,7 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { getAttribution, getIds, track } from "@/lib/analytics";
 import { cn } from "@/lib/cn";
+import { useFormGate } from "@/lib/formGate";
 
 export type Field = {
   name: string;
@@ -65,6 +66,7 @@ export function ContactForm({
   const [error, setError] = useState("");
   const [sending, setSending] = useState(false);
   const [agreed, setAgreed] = useState(false);
+  const gate = useFormGate();
 
   const submit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -73,6 +75,13 @@ export function ContactForm({
     if (missing.length) {
       setError(`Please fill in: ${missing.join(", ")}.`);
       track("form_error", { form_id: type, field: missing.join(",") });
+      return;
+    }
+    // Time gate: this form cannot be completed by a person in under three seconds. Ask for a second
+    // press rather than rejecting, so a fast human is never lost to a false positive.
+    if (gate.tooFast()) {
+      setError("That went a little too fast. Please check the details and press the button once more.");
+      track("form_error", { form_id: type, field: "too_fast" });
       return;
     }
     setSending(true);
@@ -88,6 +97,7 @@ export function ContactForm({
           attribution: getAttribution(),
           ids: getIds(),
           page: location.href,
+          elapsedMs: gate.elapsed(),
         }),
       });
       if (!res.ok) throw new Error(String(res.status));
@@ -113,6 +123,7 @@ export function ContactForm({
             name: f.name,
             value: values[f.name] ?? "",
             onFocus: () => {
+              gate.touch();
               if (!started) track("form_start", { form_id: type });
               setStarted(true);
             },

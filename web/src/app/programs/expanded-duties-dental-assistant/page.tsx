@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { PageHero, Prose } from "@/components/PageHero";
+import { LeadQuiz } from "@/components/LeadQuiz";
 
 export const metadata: Metadata = {
   title: "Expanded Duties Dental Assistant (EDDA) in Colorado",
@@ -46,6 +47,12 @@ export default function Edda() {
           </Link>{" "}
           before taking a course that promises a specific expanded-duty credential.
         </p>
+      </Prose>
+      {/* The quiz sits mid-page, outside the prose block so the card keeps its own styling. */}
+      <section className="mx-auto max-w-3xl px-4 pb-4 sm:px-6" data-section="inline_quiz">
+        <LeadQuiz compact />
+      </section>
+      <Prose className="pt-6 pb-12">
         <h2>How to grow into expanded duties</h2>
         <ol>
           <li>Get hired as a dental assistant and learn chairside basics.</li>

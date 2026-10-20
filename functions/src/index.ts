@@ -123,6 +123,11 @@ export const collect = onRequest({ region: REGION, memory: "256MiB", maxInstance
 
 const LEAD_TYPES = new Set(["program_match", "contact", "employer", "story", "school_inquiry", "job_application", "talent_pool"]);
 
+/** A lead form cannot be filled in by a person in under three seconds. This is the only spam gate.
+ *  It is enforced only when the client actually sends a number, so an older cached bundle or a
+ *  client that omits the field is still accepted: a real lead is worth more than a missed bot. */
+const MIN_FILL_MS = 3000;
+
 export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 5 }, async (req, res) => {
   if (req.method !== "POST" || !sameOrigin(req)) {
     res.status(405).end();
@@ -131,6 +136,11 @@ export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 
   const b = parseBody(req);
   if (!b || !LEAD_TYPES.has(String(b.type)) || JSON.stringify(b).length > 10000) {
     res.status(400).json({ ok: false });
+    return;
+  }
+  const elapsedMs = Number((b as { elapsedMs?: unknown }).elapsedMs);
+  if (Number.isFinite(elapsedMs) && elapsedMs >= 0 && elapsedMs < MIN_FILL_MS) {
+    res.status(422).json({ ok: false, error: "too_fast" });
     return;
   }
   const contact = Object.fromEntries(Object.entries((b.contact as Record<string, unknown>) ?? {}).map(([k, v]) => [k.slice(0, 40), clip(v, 2000)]));
@@ -157,6 +167,7 @@ export const lead = onRequest({ region: REGION, memory: "256MiB", maxInstances: 
     attribution: b.attribution ?? null,
     ids: b.ids ?? null,
     device: deviceType(ua),
+    elapsedMs: Number.isFinite(elapsedMs) ? Math.round(elapsedMs) : null,
     status: "new",
     createdAt: FieldValue.serverTimestamp(),
   });
